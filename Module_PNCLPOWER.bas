@@ -20,7 +20,7 @@ Sub PNCL20K()
         Dim temp(11)
         i = 0
         For Each c In arr
-                temp(i) = Int(c * �ü�A)
+                temp(i) = Int(c * ¶Ã¼ÆA)
                 i = i + 1
         Next
         
@@ -29,13 +29,13 @@ Sub PNCL20K()
         arr = Range("C30:C40")
         i = 0
         For Each c In arr
-                temp(i) = Int(c * �ü�A)
+                temp(i) = Int(c * ¶Ã¼ÆA)
                 i = i + 1
         Next
-        Range("D30").Resize(UBound(temp)) = Application.WorksheetFunction.Transpose(temp)
+        Range("D31").Resize(UBound(temp)) = Application.WorksheetFunction.Transpose(temp)
 End Sub
 
-Function �ü�A() As Double
+Function ¶Ã¼ÆA() As Double
         Dim MyValu%
         Dim Min%
         Dim Max%
@@ -49,6 +49,6 @@ Function �ü�A() As Double
         Max = UBound(arr)
         MyValue = Int((Max - Min + 1) * Rnd() + Min)
                
-        �ü�A = arr(MyValue)
+        ¶Ã¼ÆA = arr(MyValue)
         
 End Function
