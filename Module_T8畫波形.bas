@@ -1,8 +1,8 @@
-Attribute VB_Name = "ModuleT8µeªi§Î"
-Sub T8µe¹Ï()
+Attribute VB_Name = "ModuleT8ÂµeÂªiÂ§Ã"
+Sub T8ÂµeÂ¹Ã()
         Application.ScreenUpdating = False
         Dim arr, oROW%
-'*******************************´¶³qµe¹Ï**************************************************************
+'*******************************æ™®é€šç•«åœ–**************************************************************
 '        oRow = 7800
 '        arr = Range("C2:C" & oRow)
 '
@@ -13,7 +13,7 @@ Sub T8µe¹Ï()
 '        For i = 0 To UBound(arr) - 1
 '                oArr(i) = Abs(arr(i + 1, 1) * 1000)
 '        Next i
-'*************************************T8µe¹Ï**********************************************************
+'*************************************T8ç•«åœ–**********************************************************
        
         oROW = Range("D" & Rows.Count).End(xlUp).Row
         arr = Range("D2:D" & oROW)
@@ -27,10 +27,10 @@ Sub T8µe¹Ï()
                 temp = temp + oArr(i)
         Next i
 
-        '¥­§¡
+        'å¹³å‡
         AvgNum = temp / (oROW - 1)
 
-        '­×¹¢¼Æ­È
+        'ä¿®é£¾æ•¸å€¼
         Dim upLim As Boolean, downLim As Boolean
         For i = 0 To UBound(oArr)
                 Min = Math.Round(AvgNum * 0.9, 2)
@@ -48,7 +48,7 @@ Sub T8µe¹Ï()
 
         [G2].Resize(oROW) = Application.WorksheetFunction.Transpose(oArr)
         
- '=============µe¹Ï===============================================
+ '=============ÂµeÂ¹Ã===============================================
         Dim myChart As ChartObject, sngLeft As Single, sngTop As Single
         
         Dim sh As Worksheet
