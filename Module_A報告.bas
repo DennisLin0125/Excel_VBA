@@ -1,13 +1,13 @@
-Attribute VB_Name = "ModuleAZX³ø§i"
+Attribute VB_Name = "ModuleAå ±å‘Š"
 Option Explicit
-Sub ªi§Î¹Ï(ByVal oROW As Integer, ByVal colum As Integer)
+Sub æ³¢å½¢åœ–(ByVal oROW As Integer, ByVal colum As Integer)
         Dim fd As FileDialog, myWidth%, myHeight%, sPath, iTop
         Set fd = Application.FileDialog(msoFileDialogFilePicker)
 
         With fd
                 .AllowMultiSelect = True
-                .Title = "½Ğ¿ï¾Ü·Ó¤ù"
-                .ButtonName = "´N¬O§A¤F!!!!"
+                .Title = "è«‹é¸æ“‡ç…§ç‰‡"
+                .ButtonName = "å°±æ˜¯ä½ äº†!!!!"
         
                 myWidth = 395
                 myHeight = 295
@@ -31,13 +31,13 @@ Sub ªi§Î¹Ï(ByVal oROW As Integer, ByVal colum As Integer)
         Set fd = Nothing
 End Sub
 
-Sub AZX³ø§i()
+Sub AZXå ±å‘Š()
         
         Dim myTime As Date
         myTime = Time
 
         If ActiveSheet.name <> "RMA" Then
-                MsgBox "½Ğ¨ìRMA­¶­±°õ¦æ", vbCritical
+                MsgBox "è«‹åˆ°RMAé é¢åŸ·è¡Œ", vbCritical
                 Exit Sub
         End If
         
@@ -70,21 +70,21 @@ Sub AZX³ø§i()
                 Select Case sh.name
                 Case Is = "Test Table Tuner (-020,-023)", "Test Table Tuner (-036,-039)", "Test Table Tuner (-014)", "Test Table Tuner-014"
                 
-                        If cus = "·s¦Ë¥«¬ì¾Ç¶é°Ï¤O¦æ¸ô25¸¹ (8¼t)" Then
-                                AZXªí³æ.Show
+                        If cus = "æ–°ç«¹å¸‚ç§‘å­¸åœ’å€åŠ›è¡Œè·¯25è™Ÿ (8å» )" Then
+                                AZXè¡¨å–®.Show
                                 Dim IdleV$, IdleI$, AfterSelect2$
                                 IdleV = [K36]
                                 IdleI = [L36]
                         
                                 AfterSelect2 = [P36]
                                 
-                                MsgBox "T8¿ï¾Ü2±i¥v±K´µ¹Ï"
-                                Call ªi§Î¹Ï(37, 1)
+                                MsgBox "T8é¸æ“‡2å¼µå²å¯†æ–¯åœ–"
+                                Call æ³¢å½¢åœ–(37, 1)
                                 
-                                Worksheets("¶i¥X¼t·Ó¤ù").Copy Before:=Sheets("Failure Photo")
-                                Worksheets("¶i¥X¼t·Ó¤ù (2)").name = "Failure Photo(«È¤á)"
-                                Worksheets("Failure Photo(«È¤á)").Copy Before:=Sheets("Failure Photo")
-                                Worksheets("Failure Photo(«È¤á) (2)").name = "Failure Photo(«È¤á-2)"
+                                Worksheets("é€²å‡ºå» ç…§ç‰‡").Copy Before:=Sheets("Failure Photo")
+                                Worksheets("é€²å‡ºå» ç…§ç‰‡ (2)").name = "Failure Photo(å®¢æˆ¶)"
+                                Worksheets("Failure Photo(å®¢æˆ¶)").Copy Before:=Sheets("Failure Photo")
+                                Worksheets("Failure Photo(å®¢æˆ¶) (2)").name = "Failure Photo(å®¢æˆ¶-2)"
                                 
                                 Dim MystrT8(4) As String
                                 MystrT8(0) = "Customer request"
@@ -100,13 +100,13 @@ Sub AZX³ø§i()
                                         .VerticalAlignment = xlTop
                                 End With
                                 
-                                Worksheets("Failure Photo(«È¤á)").Activate
+                                Worksheets("Failure Photo(å®¢æˆ¶)").Activate
                                 [A17:E17] = ""
-                                MsgBox "¿ï¾Üµ¹«È¤á¹Ï¤ù(¦U¤@±i´N¦n)"
-                                ¶K¤W·lÃa·Ó¤ù
+                                MsgBox "é¸æ“‡çµ¦å®¢æˆ¶åœ–ç‰‡(å„ä¸€å¼µå°±å¥½)"
+                                è²¼ä¸Šæå£ç…§ç‰‡
                                 
                                 
-                                Worksheets("Failure Photo(«È¤á-2)").Activate
+                                Worksheets("Failure Photo(å®¢æˆ¶-2)").Activate
                                 [A17:E17] = ""
                                 With Range("A36:H36").Borders
                                         .LineStyle = xlContinuous
@@ -141,32 +141,32 @@ Sub AZX³ø§i()
                                         .Size = 12
                                 End With
                         Else
-                                AZXªí³æ.Show
-                                MsgBox "¿ï¾Ü1±i¥v±K´µ¹Ï"
-                                Call ªi§Î¹Ï(36, 2)
+                                AZXè¡¨å–®.Show
+                                MsgBox "é¸æ“‡1å¼µå²å¯†æ–¯åœ–"
+                                Call æ³¢å½¢åœ–(36, 2)
                         End If
                         
                 Case Is = "Test Table Tuner-020-023"
                 
-                        If cus = "741 ¥x«n¬ì¾Ç¶é°Ï«n¬ì¥_¸ô1¸¹ (6¼t)" Then
-                                AZXªí³æ.Show
-                                MsgBox "T6¿ï¾Ü1±i¥v±K´µ¹Ï"
-                                Call ªi§Î¹Ï(41, 5)
+                        If cus = "741 å°å—ç§‘å­¸åœ’å€å—ç§‘åŒ—è·¯1è™Ÿ (6å» )" Then
+                                AZXè¡¨å–®.Show
+                                MsgBox "T6é¸æ“‡1å¼µå²å¯†æ–¯åœ–"
+                                Call æ³¢å½¢åœ–(41, 5)
                         End If
                 
                 Case Is = "Test Table Tuner (-037)", "Test Table Tuner (-043)", "Test Table Tuner", "Test Table Tuner (-039)"
-                        AZXªí³æ.Show
-                        MsgBox "¿ï¾Ü1±i¥v±K´µ¹Ï"
-                        Call ªi§Î¹Ï(36, 2)
+                        AZXè¡¨å–®.Show
+                        MsgBox "é¸æ“‡1å¼µå²å¯†æ–¯åœ–"
+                        Call æ³¢å½¢åœ–(36, 2)
                 
                 Case Is = "Failure Photo"
-                        MsgBox "½Ğ¿ï " & ActiveSheet.name & " (¥i½Æ¿ï)"
-                        ¶K¤W·lÃa·Ó¤ù
+                        MsgBox "è«‹é¸ " & ActiveSheet.name & " (å¯è¤‡é¸)"
+                        è²¼ä¸Šæå£ç…§ç‰‡
                         AZXError.Show
                         
-                Case Is = "¶i¥X¼t·Ó¤ù"
-                        MsgBox "½Ğ¿ï " & ActiveSheet.name & " (¥i½Æ¿ï)"
-                        ¶K¤W¶i¥X¼t¹Ï¤ù
+                Case Is = "é€²å‡ºå» ç…§ç‰‡"
+                        MsgBox "è«‹é¸ " & ActiveSheet.name & " (å¯è¤‡é¸)"
+                        è²¼ä¸Šé€²å‡ºå» åœ–ç‰‡
          
                 End Select
         Next sh
@@ -178,6 +178,6 @@ Sub AZX³ø§i()
         
         Worksheets("RMA").Select
         
-        MsgBox "³B²z§¹¦¨" & Chr(10) & Chr(10) & "°õ¦æ®É¶¡" & myMin & "¤À" & mySec & "¬í¡C", vbInformation
+        MsgBox "è™•ç†å®Œæˆ" & Chr(10) & Chr(10) & "åŸ·è¡Œæ™‚é–“" & myMin & "åˆ†" & mySec & "ç§’ã€‚", vbInformation
         
 End Sub
