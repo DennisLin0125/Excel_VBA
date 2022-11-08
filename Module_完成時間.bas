@@ -1,6 +1,6 @@
-Attribute VB_Name = "Moduleßπ¶®Æ…∂°"
-Sub ßπ¶®Æ…∂°()
-        Myname = InputBox("Ω–øÈ§JRMA")
+Attribute VB_Name = "ModuleÂÆåÊàêÊôÇÈñì"
+Sub ÂÆåÊàêÊôÇÈñì()
+        Myname = InputBox("Ë´ãËº∏ÂÖ•RMA")
         
         If Myname = "" Then Exit Sub
         
@@ -36,15 +36,7 @@ Sub ßπ¶®Æ…∂°()
                 
                 Range("A1").Select
                 
-                strBody = "<B>Hi Jack</B><br><br>" & _
-                                "<B>" & Myname & "§wßπ¶® ¡¬¡¬</B><br><br>" & _
-                                "<B>Dennis Lin</B><br>" & _
-                                "<B>**********************************</B><br>" & _
-                                "<B>Kaitek Coproration</B><br>" & _
-                                "<B>14F., No. 659, Bannan Rd, Zhonghe Dist.,</B><br>" & _
-                                "<B>New Taipei City 23557, Taiwan R.O.C.</B><br>" & _
-                                "<B>TEL: 02-3234-8222 #251</B><br>" & _
-                                "<B>**********************************</B>"
+                strBody = ""
                 
                 Dim outApp As Object
                 Set outApp = CreateObject("Outlook.Application")
@@ -53,12 +45,12 @@ Sub ßπ¶®Æ…∂°()
                 Set outMail = outApp.CreateItem(0)
                 
                 With outMail
-                          .To = "jack.chen@kaitek.com.tw"
-                          .CC = "fortran.wu@kaitek.com.tw"
+                          .To = ""
+                          .CC = ""
                           .BCC = ""
-                          .Subject = Myname & " ßπ¶®∫˚≠◊"
+                          .Subject = Myname & " ÂÆåÊàêÁ∂≠‰øÆ"
                           .HtmlBody = strBody
-                          .Attachments.Add "P:\Service\RMA\WR\2022\" & Myname & ".xls"
+                          .Attachments.Add ""
                           .Display
                 End With
                   
@@ -66,7 +58,7 @@ Sub ßπ¶®Æ…∂°()
                 Set outMail = Nothing
                 Set machine = Nothing
         Else
-                MsgBox "¨dµL " & Myname & " RMA"
+                MsgBox "Êü•ÁÑ° " & Myname & " RMA"
         End If
 End Sub
 
