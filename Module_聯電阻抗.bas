@@ -1,12 +1,12 @@
-Attribute VB_Name = "ModuleÁp¹qªı§Ü"
-Sub Áp¹qªı§Ü()
+Attribute VB_Name = "Moduleè¯é›»é˜»æŠ—"
+Sub è¯é›»é˜»æŠ—()
         
         Application.ScreenUpdating = False
         Application.DisplayAlerts = False
 
         
         Dim snDennis As Worksheet
-        Set snDennis = Workbooks("«İ­×¤ÀªR.xlsm").Worksheets("Áp¹qªı§Ü")
+        Set snDennis = Workbooks("å¾…ä¿®åˆ†æ.xlsm").Worksheets("è¯é›»é˜»æŠ—")
      
         If [B5] <> "" Then
                 Dim rg As Range
@@ -38,43 +38,43 @@ Sub Áp¹qªı§Ü()
 
                 For i = Year To 2006 Step -1
 
-                        WRAns = fs.FileExists("P:\Service\RMA\WR\" & i & "\" & RMAnum & ".xls")
-                        CompAns = fs.FileExists("P:\Service\RMA\Complete\" & i & "\" & RMAnum & ".xls")
+                        WRAns = fs.FileExists("")
+                        CompAns = fs.FileExists("")
 
                         If WRAns = True Then
                                 
-                                Set wb = Workbooks.Open("P:\Service\RMA\WR\" & i & "\" & RMAnum & ".xls")
-                                If wb.Sheets(1).[B12] = "·s¦Ë¬ì¾Ç¤u·~¶é°Ï¤O¦æ¤»¸ô8¸¹" Then
+                                Set wb = Workbooks.Open("")
+                                If wb.Sheets(1).[B12] = "æ–°ç«¹ç§‘å­¸å·¥æ¥­åœ’å€åŠ›è¡Œå…­è·¯8è™Ÿ" Then
                                         snDennis.Range("B" & DRow) = "TSMC12-P1"
-                                ElseIf wb.Sheets(1).[B12] = "741 ¥x«n¬ì¾Ç¶é°Ï«n¬ì¥_¸ô1¤§1¸¹" Then
+                                ElseIf wb.Sheets(1).[B12] = "741 å°å—ç§‘å­¸åœ’å€å—ç§‘åŒ—è·¯1ä¹‹1è™Ÿ" Then
                                         snDennis.Range("B" & DRow) = "TSMC14"
-                                ElseIf wb.Sheets(1).[B12] = "¥x¤¤¤¤³¡¬ì¾Ç¶é°Ï¬ì¶®¤»¸ô1¸¹" Then
+                                ElseIf wb.Sheets(1).[B12] = "å°ä¸­ä¸­éƒ¨ç§‘å­¸åœ’å€ç§‘é›…å…­è·¯1è™Ÿ" Then
                                         snDennis.Range("B" & DRow) = "TSMC15"
-                                ElseIf wb.Sheets(1).[B12] = "·s¦Ë¥«¬ì¾Ç¶é°Ï¬ã·s¤@¸ô9¸¹ (3¼t)" Then
+                                ElseIf wb.Sheets(1).[B12] = "æ–°ç«¹å¸‚ç§‘å­¸åœ’å€ç ”æ–°ä¸€è·¯9è™Ÿ (3å» )" Then
                                         snDennis.Range("B" & DRow) = "TSMC3"
-                                ElseIf wb.Sheets(1).[B12] = "·s¦Ë¬ì¾Ç¶é°Ï¶é°Ï¤T¸ô121¸¹" Then
+                                ElseIf wb.Sheets(1).[B12] = "æ–°ç«¹ç§‘å­¸åœ’å€åœ’å€ä¸‰è·¯121è™Ÿ" Then
                                         snDennis.Range("B" & DRow) = "TSMC5"
-                                ElseIf wb.Sheets(1).[B12] = "741 ¥x«n¬ì¾Ç¶é°Ï«n¬ì¥_¸ô1¸¹ (6¼t)" Then
+                                ElseIf wb.Sheets(1).[B12] = "741 å°å—ç§‘å­¸åœ’å€å—ç§‘åŒ—è·¯1è™Ÿ (6å» )" Then
                                         snDennis.Range("B" & DRow) = "TSMC6"
-                                ElseIf wb.Sheets(1).[B12] = "·s¦Ë¥«¬ì¾Ç¶é°Ï¤O¦æ¸ô25¸¹ (8¼t)" Then
+                                ElseIf wb.Sheets(1).[B12] = "æ–°ç«¹å¸‚ç§‘å­¸åœ’å€åŠ›è¡Œè·¯25è™Ÿ (8å» )" Then
                                         snDennis.Range("B" & DRow) = "TSMC8"
                                         
-                                ElseIf Left(wb.Sheets(1).[B11], 4) = "ÁpµØ¹q¤l" Then
+                                ElseIf Left(wb.Sheets(1).[B11], 4) = "è¯è¯é›»å­" Then
                                         snDennis.Range("B" & DRow) = Right(wb.Sheets(1).[B11], 8)
                                         
-                                ElseIf wb.Sheets(1).[B12] = "·s¦Ë¬ì¾Ç¤u·~¶é°Ï¶é°Ï¤T¸ô123¸¹" Then
+                                ElseIf wb.Sheets(1).[B12] = "æ–°ç«¹ç§‘å­¸å·¥æ¥­åœ’å€åœ’å€ä¸‰è·¯123è™Ÿ" Then
                                         snDennis.Range("B" & DRow) = "VISC1"
-                                ElseIf wb.Sheets(1).[B12] = "·s¦Ë¬ì¾Ç¤u·~¶é°Ï¤O¦æ¸ô9¸¹" Then
+                                ElseIf wb.Sheets(1).[B12] = "æ–°ç«¹ç§‘å­¸å·¥æ¥­åœ’å€åŠ›è¡Œè·¯9è™Ÿ" Then
                                         snDennis.Range("B" & DRow) = "VISC2"
-                                ElseIf wb.Sheets(1).[B12] = "®ç¶é¿¤Äª¦Ë¶m«n®r¸ô¤@¬q336¸¹ " Then
+                                ElseIf wb.Sheets(1).[B12] = "æ¡ƒåœ’ç¸£è˜†ç«¹é„‰å—å´è·¯ä¸€æ®µ336è™Ÿ " Then
                                         snDennis.Range("B" & DRow) = "VISC3"
                                         
-                                ElseIf wb.Sheets(1).[B12] = "·s¦Ë¥«­»¤s°Ï¤û®H«n¸ô17«Ñ20¸¹ " Then
-                                        snDennis.Range("B" & DRow) = "ºÓ½÷¬ì§Ş"
-                                ElseIf wb.Sheets(1).[B12] = "·s¦Ë¥«­»¤s°Ï¤û®H«n¸ô17«Ñ20¸¹ " Then
-                                        snDennis.Range("B" & DRow) = "ºÓ½÷¬ì§Ş"
-                                ElseIf wb.Sheets(1).[B12] = "·s¦Ë¥«°ª»A¸ô327«Ñ4§Ë32¸¹ " Then
-                                        snDennis.Range("B" & DRow) = "Ä_­i"
+                                ElseIf wb.Sheets(1).[B12] = "æ–°ç«¹å¸‚é¦™å±±å€ç‰›åŸ”å—è·¯17å··20è™Ÿ " Then
+                                        snDennis.Range("B" & DRow) = "ç¢©è¼ç§‘æŠ€"
+                                ElseIf wb.Sheets(1).[B12] = "æ–°ç«¹å¸‚é¦™å±±å€ç‰›åŸ”å—è·¯17å··20è™Ÿ " Then
+                                        snDennis.Range("B" & DRow) = "ç¢©è¼ç§‘æŠ€"
+                                ElseIf wb.Sheets(1).[B12] = "æ–°ç«¹å¸‚é«˜ç¿ è·¯327å··4å¼„32è™Ÿ " Then
+                                        snDennis.Range("B" & DRow) = "å¯¶è™¹"
                                 End If
                                 
                                 
@@ -107,38 +107,38 @@ Sub Áp¹qªı§Ü()
                                 Exit For
                         ElseIf CompAns = True Then
                                 
-                                Set wb = Workbooks.Open("P:\Service\RMA\Complete\" & i & "\" & RMAnum & ".xls")
-                                If wb.Sheets(1).[B12] = "·s¦Ë¬ì¾Ç¤u·~¶é°Ï¤O¦æ¤»¸ô8¸¹" Then
+                                Set wb = Workbooks.Open("")
+                                If wb.Sheets(1).[B12] = "æ–°ç«¹ç§‘å­¸å·¥æ¥­åœ’å€åŠ›è¡Œå…­è·¯8è™Ÿ" Then
                                         snDennis.Range("B" & DRow) = "TSMC12-P1"
-                                ElseIf wb.Sheets(1).[B12] = "741 ¥x«n¬ì¾Ç¶é°Ï«n¬ì¥_¸ô1¤§1¸¹" Then
+                                ElseIf wb.Sheets(1).[B12] = "741 å°å—ç§‘å­¸åœ’å€å—ç§‘åŒ—è·¯1ä¹‹1è™Ÿ" Then
                                         snDennis.Range("B" & DRow) = "TSMC14"
-                                ElseIf wb.Sheets(1).[B12] = "¥x¤¤¤¤³¡¬ì¾Ç¶é°Ï¬ì¶®¤»¸ô1¸¹" Then
+                                ElseIf wb.Sheets(1).[B12] = "å°ä¸­ä¸­éƒ¨ç§‘å­¸åœ’å€ç§‘é›…å…­è·¯1è™Ÿ" Then
                                         snDennis.Range("B" & DRow) = "TSMC15"
-                                ElseIf wb.Sheets(1).[B12] = "·s¦Ë¥«¬ì¾Ç¶é°Ï¬ã·s¤@¸ô9¸¹ (3¼t)" Then
+                                ElseIf wb.Sheets(1).[B12] = "æ–°ç«¹å¸‚ç§‘å­¸åœ’å€ç ”æ–°ä¸€è·¯9è™Ÿ (3å» )" Then
                                         snDennis.Range("B" & DRow) = "TSMC3"
-                                ElseIf wb.Sheets(1).[B12] = "·s¦Ë¬ì¾Ç¶é°Ï¶é°Ï¤T¸ô121¸¹" Then
+                                ElseIf wb.Sheets(1).[B12] = "æ–°ç«¹ç§‘å­¸åœ’å€åœ’å€ä¸‰è·¯121è™Ÿ" Then
                                         snDennis.Range("B" & DRow) = "TSMC5"
-                                ElseIf wb.Sheets(1).[B12] = "741 ¥x«n¬ì¾Ç¶é°Ï«n¬ì¥_¸ô1¸¹ (6¼t)" Then
+                                ElseIf wb.Sheets(1).[B12] = "741 å°å—ç§‘å­¸åœ’å€å—ç§‘åŒ—è·¯1è™Ÿ (6å» )" Then
                                         snDennis.Range("B" & DRow) = "TSMC6"
-                                ElseIf wb.Sheets(1).[B12] = "·s¦Ë¥«¬ì¾Ç¶é°Ï¤O¦æ¸ô25¸¹ (8¼t)" Then
+                                ElseIf wb.Sheets(1).[B12] = "æ–°ç«¹å¸‚ç§‘å­¸åœ’å€åŠ›è¡Œè·¯25è™Ÿ (8å» )" Then
                                         snDennis.Range("B" & DRow) = "TSMC8"
                                         
-                                ElseIf Left(wb.Sheets(1).[B11], 4) = "ÁpµØ¹q¤l" Then
+                                ElseIf Left(wb.Sheets(1).[B11], 4) = "è¯è¯é›»å­" Then
                                         snDennis.Range("B" & DRow) = Right(wb.Sheets(1).[B11], 8)
                                         
-                                ElseIf wb.Sheets(1).[B12] = "·s¦Ë¬ì¾Ç¤u·~¶é°Ï¶é°Ï¤T¸ô123¸¹" Then
+                                ElseIf wb.Sheets(1).[B12] = "æ–°ç«¹ç§‘å­¸å·¥æ¥­åœ’å€åœ’å€ä¸‰è·¯123è™Ÿ" Then
                                         snDennis.Range("B" & DRow) = "VISC1"
-                                ElseIf wb.Sheets(1).[B12] = "·s¦Ë¬ì¾Ç¤u·~¶é°Ï¤O¦æ¸ô9¸¹" Then
+                                ElseIf wb.Sheets(1).[B12] = "æ–°ç«¹ç§‘å­¸å·¥æ¥­åœ’å€åŠ›è¡Œè·¯9è™Ÿ" Then
                                         snDennis.Range("B" & DRow) = "VISC2"
-                                ElseIf wb.Sheets(1).[B12] = "®ç¶é¿¤Äª¦Ë¶m«n®r¸ô¤@¬q336¸¹ " Then
+                                ElseIf wb.Sheets(1).[B12] = "æ¡ƒåœ’ç¸£è˜†ç«¹é„‰å—å´è·¯ä¸€æ®µ336è™Ÿ " Then
                                         snDennis.Range("B" & DRow) = "VISC3"
                                         
-                                ElseIf wb.Sheets(1).[B12] = "·s¦Ë¥«­»¤s°Ï¤û®H«n¸ô17«Ñ20¸¹ " Then
-                                        snDennis.Range("B" & DRow) = "ºÓ½÷¬ì§Ş"
-                                ElseIf wb.Sheets(1).[B12] = "·s¦Ë¥«­»¤s°Ï¤û®H«n¸ô17«Ñ20¸¹ " Then
-                                        snDennis.Range("B" & DRow) = "ºÓ½÷¬ì§Ş"
-                                ElseIf wb.Sheets(1).[B12] = "·s¦Ë¥«°ª»A¸ô327«Ñ4§Ë32¸¹ " Then
-                                        snDennis.Range("B" & DRow) = "Ä_­i"
+                                ElseIf wb.Sheets(1).[B12] = "æ–°ç«¹å¸‚é¦™å±±å€ç‰›åŸ”å—è·¯17å··20è™Ÿ " Then
+                                        snDennis.Range("B" & DRow) = "ç¢©è¼ç§‘æŠ€"
+                                ElseIf wb.Sheets(1).[B12] = "æ–°ç«¹å¸‚é¦™å±±å€ç‰›åŸ”å—è·¯17å··20è™Ÿ " Then
+                                        snDennis.Range("B" & DRow) = "ç¢©è¼ç§‘æŠ€"
+                                ElseIf wb.Sheets(1).[B12] = "æ–°ç«¹å¸‚é«˜ç¿ è·¯327å··4å¼„32è™Ÿ " Then
+                                        snDennis.Range("B" & DRow) = "å¯¶è™¹"
                                 End If
                                 snDennis.Range("C" & DRow) = wb.Sheets(1).[F8]
                                 snDennis.Range("D" & DRow) = wb.Sheets(1).[F9]
@@ -170,7 +170,7 @@ Sub Áp¹qªı§Ü()
                         End If
                 Next i
         Next c
-        MsgBox "¬d¸ß§¹¦¨"
+        MsgBox "æŸ¥è©¢å®Œæˆ"
         Application.DisplayAlerts = True
 End Sub
 
