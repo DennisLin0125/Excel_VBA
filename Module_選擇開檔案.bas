@@ -1,21 +1,21 @@
-Attribute VB_Name = "Module¿ï¾Ü¶}ÀÉ®×"
+Attribute VB_Name = "Moduleé¸æ“‡é–‹æª”æ¡ˆ"
 Option Explicit
-Sub ¿ï¾Ü¶}ÀÉ()
-Attribute ¿ï¾Ü¶}ÀÉ.VB_ProcData.VB_Invoke_Func = "r\n14"
+Sub é¸æ“‡é–‹æª”()
+Attribute é¸æ“‡é–‹æª”.VB_ProcData.VB_Invoke_Func = "r\n14"
         Dim RMAnum$
         Dim Year$, fs As Object
         Dim WRAns As Boolean, CompAns As Boolean
         
         Set fs = CreateObject("Scripting.FileSystemObject")
         
-        RMAnum = InputBox("¿ï¾Ü¶}±ÒRMA")
+        RMAnum = InputBox("é¸æ“‡é–‹å•ŸRMA")
         
         If RMAnum = "" Then Exit Sub
         
         Dim wb As Workbook
         For Each wb In Workbooks
                 If wb.name = RMAnum & ".xls" Then
-                        MsgBox "ÀÉ®× " & RMAnum & " ¤w¶}±Ò", vbCritical
+                        MsgBox "æª”æ¡ˆ " & RMAnum & " å·²é–‹å•Ÿ", vbCritical
                         Exit Sub
                 End If
         Next wb
@@ -24,27 +24,27 @@ Attribute ¿ï¾Ü¶}ÀÉ.VB_ProcData.VB_Invoke_Func = "r\n14"
         Dim i%
         For i = Year To 2006 Step -1
             
-                WRAns = fs.FileExists("P:\Service\RMA\WR\" & i & "\" & RMAnum & ".xls")
-                CompAns = fs.FileExists("P:\Service\RMA\Complete\" & i & "\" & RMAnum & ".xls")
+                WRAns = fs.FileExists("")
+                CompAns = fs.FileExists("")
                 
                 If WRAns = True Then
                         Application.DisplayAlerts = False
-                        Workbooks.Open Filename:="P:\Service\RMA\WR\" & i & "\" & RMAnum & ".xls"
+                        Workbooks.Open Filename:=""
                         If ActiveWorkbook.ReadOnly = True Then
-                            MsgBox "½Ğª`·N, ¥Ø«e¬°°ßÅª"
+                            MsgBox "è«‹æ³¨æ„, ç›®å‰ç‚ºå”¯è®€"
                         End If
                         Application.DisplayAlerts = True
                         Exit For
                 ElseIf CompAns = True Then
                         Application.DisplayAlerts = False
-                        Workbooks.Open Filename:="P:\Service\RMA\Complete\" & i & "\" & RMAnum & ".xls"
+                        Workbooks.Open Filename:=""
                         If ActiveWorkbook.ReadOnly = True Then
-                            MsgBox "½Ğª`·N, ¥Ø«e¬°°ßÅª"
+                            MsgBox "è«‹æ³¨æ„, ç›®å‰ç‚ºå”¯è®€"
                         End If
                         Application.DisplayAlerts = True
                         Exit For
                         If i = 2006 Then
-                                MsgBox "ÀÉ®×¤£¦s¦b!"
+                                MsgBox "æª”æ¡ˆä¸å­˜åœ¨!"
                         End If
                 End If
         Next i
