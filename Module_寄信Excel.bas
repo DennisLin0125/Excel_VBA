@@ -20,9 +20,7 @@ Sub SendMailEnvelope()
         
         With ActiveSheet.MailEnvelope
 
-                strText = "Bella" & vbCrLf & vbCrLf & "請幫忙確認與Issue 料號" & vbCrLf & _
-                "我需要訂購新料，已填寫Parts order" & vbCrLf & _
-                "費用部門幫我掛RD" & vbCrLf & "謝謝"
+                strText = ""
         
                 .Introduction = strText
                 
