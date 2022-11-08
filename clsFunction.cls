@@ -12,10 +12,10 @@ Sub AEtxt()
         Set fd = Application.FileDialog(msoFileDialogFilePicker)
         
         With fd
-                .Title = "½Ğ¿ï¾ÜLOGµ§°O¥»ÀÉ®×"
-                .ButtonName = "´N¬O§A¤F!!!"
-                .Filters.Add "µ§°O¥»ÀÉ®×", "*.*"
-                MsgBox "½Ğ¿ï¾Ü ¥X¼t LOGµ§°O¥»ÀÉ®×"
+                .Title = "è«‹é¸æ“‡LOGç­†è¨˜æœ¬æª”æ¡ˆ"
+                .ButtonName = "å°±æ˜¯ä½ äº†!!!"
+                .Filters.Add "ç­†è¨˜æœ¬æª”æ¡ˆ", "*.*"
+                MsgBox "è«‹é¸æ“‡ å‡ºå»  LOGç­†è¨˜æœ¬æª”æ¡ˆ"
                 
                 If .Show Then
                         Dim temp(14) As String
@@ -36,7 +36,7 @@ Function MKSAllTestList(ByVal RMAname As String) As Boolean
         MKSAllTestList = False
           
         Dim PathTest$
-        PathTest = "P:\Service\Product\MKS RPS\all test list.xls"
+        PathTest = ""
         
         Dim wbtest As Workbook
         Set wbtest = Workbooks.Open(PathTest, UpdateLinks:=0)
@@ -63,42 +63,34 @@ Sub CopyPhoto(ByVal RMA As String, ByVal SN As String, ByVal Engineername As Str
         
         Set fs = CreateObject("Scripting.FileSystemObject")
         
-        If fs.FolderExists("P:\Service\§Ş³N°Q½×±M°Ï\Engineer\Dennis\MKS\" & SN) Then
-                fs.DeleteFolder "P:\Service\§Ş³N°Q½×±M°Ï\Engineer\Dennis\MKS\" & SN
+        If fs.FolderExists("") Then
+                fs.DeleteFolder ""
         End If
         
         With fs
-                .CreateFolder ("P:\Service\§Ş³N°Q½×±M°Ï\Engineer\Dennis\MKS\" & SN)
-                .CreateFolder ("P:\Service\§Ş³N°Q½×±M°Ï\Engineer\Dennis\MKS\" & SN & "\" & RMA)
-                .CreateFolder ("P:\Service\§Ş³N°Q½×±M°Ï\Engineer\Dennis\MKS\" & SN & "\" & RMA & "\LOG\")
-                .CreateFolder ("P:\Service\§Ş³N°Q½×±M°Ï\Engineer\Dennis\MKS\" & SN & "\" & RMA & "\¶i¥X¼t·Ó¤ù")
-                .CreateFolder ("P:\Service\§Ş³N°Q½×±M°Ï\Engineer\Dennis\MKS\" & SN & "\" & RMA & "\¬G»Ù¹Ï¤ù")
-                .CreateFolder ("P:\Service\§Ş³N°Q½×±M°Ï\Engineer\Dennis\MKS\" & SN & "\" & RMA & "\¬G»Ù¹Ï¤ù\ºû­×«e")
-                .CreateFolder ("P:\Service\§Ş³N°Q½×±M°Ï\Engineer\Dennis\MKS\" & SN & "\" & RMA & "\¬G»Ù¹Ï¤ù\ºû­×«á")
-                .CreateFolder ("P:\Service\§Ş³N°Q½×±M°Ï\Engineer\Dennis\MKS\" & SN & "\" & RMA & "\¶i¥X¼t·Ó¤ù\ºû­×«e")
-                .CreateFolder ("P:\Service\§Ş³N°Q½×±M°Ï\Engineer\Dennis\MKS\" & SN & "\" & RMA & "\¶i¥X¼t·Ó¤ù\ºû­×«á")
+                .CreateFolder ("")
         End With
         
         Dim RpBeforPath$, RpAfterPath$, MachAfterPath$, MachBeforPath$, SourcePath$, LogPath$
         
-        RpBeforPath = "P:\Service\§Ş³N°Q½×±M°Ï\Engineer\Dennis\MKS\" & SN & "\" & RMA & "\¬G»Ù¹Ï¤ù\ºû­×«e\"
-        RpAfterPath = "P:\Service\§Ş³N°Q½×±M°Ï\Engineer\Dennis\MKS\" & SN & "\" & RMA & "\¬G»Ù¹Ï¤ù\ºû­×«á\"
+        RpBeforPath = ""
+        RpAfterPath = ""
         
-        MachAfterPath = "P:\Service\§Ş³N°Q½×±M°Ï\Engineer\Dennis\MKS\" & SN & "\" & RMA & "\¶i¥X¼t·Ó¤ù\ºû­×«á\"
-        MachBeforPath = "P:\Service\§Ş³N°Q½×±M°Ï\Engineer\Dennis\MKS\" & SN & "\" & RMA & "\¶i¥X¼t·Ó¤ù\ºû­×«e\"
+        MachAfterPath = ""
+        MachBeforPath = ""
         
-        SourcePath = "P:\Service\§Ş³N°Q½×±M°Ï\Engineer\Dennis\MKS\" & SN & "\" & RMA
-        LogPath = "P:\Service\§Ş³N°Q½×±M°Ï\Engineer\Dennis\MKS\" & SN & "\" & RMA & "\LOG\"
+        SourcePath = ""
+        LogPath = ""
          
-        'ºû­×«e¥~Æ[·Ó¤ù
+        'ç¶­ä¿®å‰å¤–è§€ç…§ç‰‡
         Dim fdMachBefor As FileDialog
         Set fdMachBefor = Application.FileDialog(msoFileDialogFilePicker)
         
         With fdMachBefor
                 .AllowMultiSelect = True
-                .Title = "½Ğ¿ï¾Ü ¶i¥X¼t·Ó¤ùªº (ºû­×«e) ·Ó¤ù"
-                .ButtonName = "´N¬O§A¤F!!!!"
-                MsgBox "±µ¤U¨Ó¡A±N§â·Ó¤ù©M¸ê®Æ°µ¤ÀÃş" & Chr(10) & Chr(10) & "½Ğ¿ï¾Ü ¶i¥X¼t·Ó¤ùªº (ºû­×«e) ·Ó¤ù"
+                .Title = "è«‹é¸æ“‡ é€²å‡ºå» ç…§ç‰‡çš„ (ç¶­ä¿®å‰) ç…§ç‰‡"
+                .ButtonName = "å°±æ˜¯ä½ äº†!!!!"
+                MsgBox "æ¥ä¸‹ä¾†ï¼Œå°‡æŠŠç…§ç‰‡å’Œè³‡æ–™åšåˆ†é¡" & Chr(10) & Chr(10) & "è«‹é¸æ“‡ é€²å‡ºå» ç…§ç‰‡çš„ (ç¶­ä¿®å‰) ç…§ç‰‡"
                 If .Show Then
                         For Each sPath In .SelectedItems
                                 fs.CopyFile sPath, MachBeforPath
@@ -106,15 +98,15 @@ Sub CopyPhoto(ByVal RMA As String, ByVal SN As String, ByVal Engineername As Str
                 End If
         End With
         
-        'ºû­×«á¥~Æ[·Ó¤ù
+        'ç¶­ä¿®å¾Œå¤–è§€ç…§ç‰‡
         Dim fdMachAfter As FileDialog
         Set fdMachAfter = Application.FileDialog(msoFileDialogFilePicker)
         
         With fdMachAfter
                 .AllowMultiSelect = True
-                .Title = "½Ğ¿ï¾Ü ¶i¥X¼t·Ó¤ùªº (ºû­×«á) ·Ó¤ù"
-                .ButtonName = "´N¬O§A¤F!!!!"
-                MsgBox "½Ğ¿ï¾Ü ¶i¥X¼t·Ó¤ùªº(ºû­×«á)·Ó¤ù (¥i½Æ¿ï)"
+                .Title = "è«‹é¸æ“‡ é€²å‡ºå» ç…§ç‰‡çš„ (ç¶­ä¿®å¾Œ) ç…§ç‰‡"
+                .ButtonName = "å°±æ˜¯ä½ äº†!!!!"
+                MsgBox "è«‹é¸æ“‡ é€²å‡ºå» ç…§ç‰‡çš„(ç¶­ä¿®å¾Œ)ç…§ç‰‡ (å¯è¤‡é¸)"
                 If .Show Then
                         For Each sPath In .SelectedItems
                                 fs.CopyFile sPath, MachAfterPath
@@ -122,15 +114,15 @@ Sub CopyPhoto(ByVal RMA As String, ByVal SN As String, ByVal Engineername As Str
                 End If
         End With
         
-        'ºû­×«e¬G»Ù·Ó¤ù
+        'ç¶­ä¿®å‰æ•…éšœç…§ç‰‡
         Dim fdRpBefor As FileDialog
         Set fdRpBefor = Application.FileDialog(msoFileDialogFilePicker)
         
         With fdRpBefor
                 .AllowMultiSelect = True
-                .Title = "½Ğ¿ï¾Ü ¬G»Ù·Ó¤ùªº (ºû­×«e) ·Ó¤ù"
-                .ButtonName = "´N¬O§A¤F!!!!"
-                MsgBox "½Ğ¿ï¾Ü ¬G»Ù·Ó¤ùªº(ºû­×«e)·Ó¤ù (¥i½Æ¿ï)"
+                .Title = "è«‹é¸æ“‡ æ•…éšœç…§ç‰‡çš„ (ç¶­ä¿®å‰) ç…§ç‰‡"
+                .ButtonName = "å°±æ˜¯ä½ äº†!!!!"
+                MsgBox "è«‹é¸æ“‡ æ•…éšœç…§ç‰‡çš„(ç¶­ä¿®å‰)ç…§ç‰‡ (å¯è¤‡é¸)"
                 If .Show Then
                         For Each sPath In .SelectedItems
                                 fs.CopyFile sPath, RpBeforPath
@@ -138,15 +130,15 @@ Sub CopyPhoto(ByVal RMA As String, ByVal SN As String, ByVal Engineername As Str
                 End If
         End With
         
-        'ºû­×«e¬G»Ù·Ó¤ù
+        'ç¶­ä¿®å‰æ•…éšœç…§ç‰‡
         Dim fdRpAfter As FileDialog
         Set fdRpAfter = Application.FileDialog(msoFileDialogFilePicker)
         
         With fdRpAfter
                 .AllowMultiSelect = True
-                .ButtonName = "´N¬O§A¤F!!!!"
-                .Title = "½Ğ¿ï¾Ü ¬G»Ù·Ó¤ùªº (ºû­×«á) ·Ó¤ù"
-                MsgBox "½Ğ¿ï¾Ü ¬G»Ù·Ó¤ùªº(ºû­×«á)·Ó¤ù (¥i½Æ¿ï)"
+                .ButtonName = "å°±æ˜¯ä½ äº†!!!!"
+                .Title = "è«‹é¸æ“‡ æ•…éšœç…§ç‰‡çš„ (ç¶­ä¿®å¾Œ) ç…§ç‰‡"
+                MsgBox "è«‹é¸æ“‡ æ•…éšœç…§ç‰‡çš„(ç¶­ä¿®å¾Œ)ç…§ç‰‡ (å¯è¤‡é¸)"
                 If .Show Then
                         For Each sPath In .SelectedItems
                                 fs.CopyFile sPath, RpAfterPath
@@ -154,15 +146,15 @@ Sub CopyPhoto(ByVal RMA As String, ByVal SN As String, ByVal Engineername As Str
                 End If
         End With
         
-        'LOG ÂI¤õ¹qÀ£
+        'LOG é»ç«é›»å£“
         Dim fdLog As FileDialog
         Set fdLog = Application.FileDialog(msoFileDialogFilePicker)
         
         With fdLog
                 .AllowMultiSelect = True
-                .ButtonName = "´N¬O§A¤F!!!!"
-                .Title = "½Ğ¿ï¾Ü²Õ¸Ë¤H­û·Ó¤ù¥HRMA©R¦Wªº¸ê®Æ§¨"
-                 MsgBox "½Ğ¿ï¾Ü ÂI¤õ¹qÀ£ excelÀÉ BurnIN Ignition ROR LOG ¸ê®Æ"
+                .ButtonName = "å°±æ˜¯ä½ äº†!!!!"
+                .Title = "è«‹é¸æ“‡çµ„è£äººå“¡ç…§ç‰‡ä»¥RMAå‘½åçš„è³‡æ–™å¤¾"
+                 MsgBox "è«‹é¸æ“‡ é»ç«é›»å£“ excelæª” BurnIN Ignition ROR LOG è³‡æ–™"
                 If .Show Then
                         For Each sPath In .SelectedItems
                                 fs.CopyFile sPath, LogPath
@@ -170,15 +162,15 @@ Sub CopyPhoto(ByVal RMA As String, ByVal SN As String, ByVal Engineername As Str
                 End If
         End With
         
-        'µÄÅé²Õ¸Ë·Ó¤ù
+        'è…”é«”çµ„è£ç…§ç‰‡
         Dim fdSource As FileDialog
         Set fdSource = Application.FileDialog(msoFileDialogFolderPicker)
         
         With fdSource
-                .InitialFileName = "P:\Service\Repair Picture\RF Product\©î¸Ë¤H­û¼È©ñSource"
-                .Title = "½Ğ¿ï¾Ü²Õ¸Ë¤H­û·Ó¤ù¥HRMA©R¦Wªº¸ê®Æ§¨"
-                .ButtonName = "´N¬O§A¤F!!!!"
-                MsgBox "½Ğ¿ï¾Ü ²Õ¸Ë¤H­û·Ó¤ù¥H RMA ©R¦Wªº¸ê®Æ§¨" & Chr(10) & Chr(10) & "¦pªGµÄÅé¥¼©î½Ğ«ö ¨ú®ø"
+                .InitialFileName = ""
+                .Title = "è«‹é¸æ“‡çµ„è£äººå“¡ç…§ç‰‡ä»¥RMAå‘½åçš„è³‡æ–™å¤¾"
+                .ButtonName = "å°±æ˜¯ä½ äº†!!!!"
+                MsgBox "è«‹é¸æ“‡ çµ„è£äººå“¡ç…§ç‰‡ä»¥ RMA å‘½åçš„è³‡æ–™å¤¾" & Chr(10) & Chr(10) & "å¦‚æœè…”é«”æœªæ‹†è«‹æŒ‰ å–æ¶ˆ"
                 
                 If .Show Then
                         fs.CopyFolder .SelectedItems(1), SourcePath
@@ -193,15 +185,15 @@ Sub CopyPhoto(ByVal RMA As String, ByVal SN As String, ByVal Engineername As Str
         Set fdMachAfter = Nothing
         Set fdMachBefor = Nothing
         
-        '²¾°Ê
+        'ç§»å‹•
         Dim oTimes%
         oTimes = 0
         
-        a = MsgBox("¬O§_­n½Æ»s·Ó¤ù¦Ü P¼Ñ?", vbOKCancel)
+        a = MsgBox("æ˜¯å¦è¦è¤‡è£½ç…§ç‰‡è‡³ Pæ§½?", vbOKCancel)
         
         If a = vbOK Then
-                Source = "P:\Service\§Ş³N°Q½×±M°Ï\Engineer\Dennis\MKS\" & SN
-                path = "P:\Service\Repair Picture\RF Product\MKS RPS\" & SN
+                Source = ""
+                path = ""
                 Set fs = CreateObject("scripting.FileSystemObject")
                 fs.CopyFolder Source, path
                 oTimes = 1
@@ -209,10 +201,10 @@ Sub CopyPhoto(ByVal RMA As String, ByVal SN As String, ByVal Engineername As Str
         End If
         
         If oTimes Then
-                Source = "P:\Service\§Ş³N°Q½×±M°Ï\Engineer\Dennis\MKS\" & SN
+                Source = ""
                 Set fs = CreateObject("scripting.FileSystemObject")
                 fs.DeleteFolder Source
-                Set myTex = fs.CreateTextFile("P:\Service\§Ş³N°Q½×±M°Ï\Engineer\Dennis\MKS\" & RMA & "_" & Engineername, True)
+                Set myTex = fs.CreateTextFile("", True)
                 myTex.Write ("RMA :" & RMA)
                 myTex.WriteLine
                 myTex.Write ("SN :" & SN)
@@ -220,10 +212,10 @@ Sub CopyPhoto(ByVal RMA As String, ByVal SN As String, ByVal Engineername As Str
                 Set myTex = Nothing
                 Set fs = Nothing
         Else
-                Source = "P:\Service\§Ş³N°Q½×±M°Ï\Engineer\Dennis\MKS\" & SN
+                Source = ""
                 Set fs = CreateObject("scripting.FileSystemObject")
                 fs.DeleteFolder Source
-                Set myTex = fs.CreateTextFile("P:\Service\§Ş³N°Q½×±M°Ï\Engineer\Dennis\MKS\" & RMA & "_" & Engineername & "_·Ó¤ù¨S¶Ç.txt", True)
+                Set myTex = fs.CreateTextFile("", True)
                 myTex.Write ("RMA :" & RMA)
                 myTex.WriteLine
                 myTex.Write ("SN :" & SN)
@@ -238,19 +230,19 @@ Function MKS3LChecklist(ByVal Path1 As String, ByVal RMAname As String) As Strin
         Set wb = Workbooks.Open(Path1)
         
         Dim source1 As Range
-        Set source1 = wb.Worksheets("²M³æ").[C27:F30]
+        Set source1 = wb.Worksheets("æ¸…å–®").[C27:F30]
         Dim spath1 As Range
         Set spath1 = Workbooks(RMAname & ".xls").Worksheets("RMA").[K12]
         
         Dim source2 As Range
-        Set source2 = wb.Worksheets("²M³æ").[C33:F36]
+        Set source2 = wb.Worksheets("æ¸…å–®").[C33:F36]
         Dim spath2 As Range
         Set spath2 = Workbooks(RMAname & ".xls").Worksheets("RMA").[Q12]
         
         Dim DateCord$
-        DateCord = Right(wb.Worksheets("²M³æ").[G22], 4)
+        DateCord = Right(wb.Worksheets("æ¸…å–®").[G22], 4)
         
-        If wb.Worksheets("²M³æ").[C33] = "" Then
+        If wb.Worksheets("æ¸…å–®").[C33] = "" Then
             
                 spath1.Resize(source1.Rows.Count, source1.Columns.Count) = source1.Value
                 
@@ -297,7 +289,7 @@ Function MKS3LPhotoCheck(ByVal MKS3L As String, ByVal RMAname As String) As Bool
         If MKS3L = "MKS ASTRONi 3L REACTIVE GAS GENERATOR" Then
           
                 Dim Path3L$
-                Path3L = "P:\Service\§Ş³N°Q½×±M°Ï\Engineer\4. Jacky\MKS 3L.xlsx"
+                Path3L = ""
                 
                 Dim wb3L As Workbook
                 Set wb3L = Workbooks.Open(Path3L, UpdateLinks:=0)
@@ -320,7 +312,7 @@ Function MKS3LPhotoCheck(ByVal MKS3L As String, ByVal RMAname As String) As Bool
         End If
 End Function
     
-Sub ´¡¤JÂI¤õ¹qÀ£(ByVal Row As Integer, ByVal index As Integer)
+Sub æ’å…¥é»ç«é›»å£“(ByVal Row As Integer, ByVal index As Integer)
         
         ActiveWindow.Zoom = 75
 
@@ -333,9 +325,9 @@ Sub ´¡¤JÂI¤õ¹qÀ£(ByVal Row As Integer, ByVal index As Integer)
         
         With fd
                 .AllowMultiSelect = True
-                .Title = "½Ğ¿ï¾Ü·Ó¤ù"
-                .ButtonName = "´N¬O§A¤F!!!!"
-                MsgBox "½Ğ¿ï¾ÜÂI¤õ¹qÀ£ (¥i½Æ¿ï)"
+                .Title = "è«‹é¸æ“‡ç…§ç‰‡"
+                .ButtonName = "å°±æ˜¯ä½ äº†!!!!"
+                MsgBox "è«‹é¸æ“‡é»ç«é›»å£“ (å¯è¤‡é¸)"
         
                 colum = 1
                 
@@ -379,9 +371,9 @@ Sub ´¡¤JÂI¤õ¹qÀ£(ByVal Row As Integer, ByVal index As Integer)
         
         With fd
                 .AllowMultiSelect = True
-                .ButtonName = "´N¬O§A¤F!!!!"
-                .Title = "½Ğ¿ï¾Ü·Ó¤ù"
-                MsgBox "½Ğ¿ï´úº|·Ó¤ù (¥i½Æ¿ï)"
+                .ButtonName = "å°±æ˜¯ä½ äº†!!!!"
+                .Title = "è«‹é¸æ“‡ç…§ç‰‡"
+                MsgBox "è«‹é¸æ¸¬æ¼ç…§ç‰‡ (å¯è¤‡é¸)"
                 
                 colum = 1
                 Row = Row + 21
@@ -409,7 +401,7 @@ Sub ´¡¤JÂI¤õ¹qÀ£(ByVal Row As Integer, ByVal index As Integer)
         End With
         Set fd = Nothing
 End Sub
-Sub ´¡¤JNozzle¹Ï¤ù()
+Sub æ’å…¥Nozzleåœ–ç‰‡()
 
         Application.ScreenUpdating = True
         
@@ -423,9 +415,9 @@ Sub ´¡¤JNozzle¹Ï¤ù()
         Set fd = Application.FileDialog(msoFileDialogFilePicker)
         
         With fd
-                .Title = "½Ğ¿ï¾Ü·Ó¤ù"
-                .ButtonName = "´N¬O§A¤F!!!"
-                MsgBox "½Ğ¿ï¾Ü Nozzleªº·Ó¤ù"
+                .Title = "è«‹é¸æ“‡ç…§ç‰‡"
+                .ButtonName = "å°±æ˜¯ä½ äº†!!!"
+                MsgBox "è«‹é¸æ“‡ Nozzleçš„ç…§ç‰‡"
                 myRow = 18
                 
                 Dim rng As Range
@@ -457,7 +449,7 @@ Sub ´¡¤JNozzle¹Ï¤ù()
         End With
         
         [A38:D38].Merge
-        [A38] = "¥X¼tÂI¤õÀY"
+        [A38] = "å‡ºå» é»ç«é ­"
         With [A38].Font
                 .name = "Tahoma"
                 .Size = 12
@@ -472,19 +464,19 @@ Sub Photo(ByVal Row As Integer, ByVal index As Integer)
         
     
         If ActiveSheet.name = "Failure Photo" Then
-                MsgBox "½Ğ¿ï (Failure Photo) ­¶­± ºû­×«eªº·Ó¤ù (¥i½Æ¿ï)"
+                MsgBox "è«‹é¸ (Failure Photo) é é¢ ç¶­ä¿®å‰çš„ç…§ç‰‡ (å¯è¤‡é¸)"
             
         ElseIf ActiveSheet.name = "Failure Photo (2)" Then
-                MsgBox "½Ğ¿ï (Failure Photo (2) ­¶­± ºû­×«eªº·Ó¤ù (¥i½Æ¿ï)"
+                MsgBox "è«‹é¸ (Failure Photo (2) é é¢ ç¶­ä¿®å‰çš„ç…§ç‰‡ (å¯è¤‡é¸)"
              
         ElseIf ActiveSheet.name = "Failure Photo (3)" Then
-                MsgBox "½Ğ¿ï (Failure Photo (3) ­¶­± ºû­×«eªº·Ó¤ù (¥i½Æ¿ï)"
+                MsgBox "è«‹é¸ (Failure Photo (3) é é¢ ç¶­ä¿®å‰çš„ç…§ç‰‡ (å¯è¤‡é¸)"
             
-        ElseIf ActiveSheet.name = "¶i¥X¼t·Ó¤ù" Then
-                MsgBox "½Ğ¿ï (¶i¥X¼t·Ó¤ù) ­¶­± ¶i¼t·Ó¤ù (¥i½Æ¿ï)"
+        ElseIf ActiveSheet.name = "é€²å‡ºå» ç…§ç‰‡" Then
+                MsgBox "è«‹é¸ (é€²å‡ºå» ç…§ç‰‡) é é¢ é€²å» ç…§ç‰‡ (å¯è¤‡é¸)"
             
         ElseIf tempName = "Test Table MKS" Then
-                MsgBox "½Ğ¿ï ÂI¤õ¹qÀ£ ·Ó¤ù (¥i½Æ¿ï)"
+                MsgBox "è«‹é¸ é»ç«é›»å£“ ç…§ç‰‡ (å¯è¤‡é¸)"
         End If
         
         Dim fd As FileDialog
@@ -492,8 +484,8 @@ Sub Photo(ByVal Row As Integer, ByVal index As Integer)
         
         With fd
                 .AllowMultiSelect = True
-                .Title = "½Ğ¿ï¾Ü·Ó¤ù"
-                .ButtonName = "´N¬O§A¤F!!!!"
+                .Title = "è«‹é¸æ“‡ç…§ç‰‡"
+                .ButtonName = "å°±æ˜¯ä½ äº†!!!!"
                 Dim rng As Range
                 Dim sShape As Shape
                 
@@ -525,16 +517,16 @@ Sub Photo(ByVal Row As Integer, ByVal index As Integer)
    
     
         If ActiveSheet.name = "Failure Photo" Then
-                MsgBox "½Ğ¿ï¾Ü (Failure Photo) ­¶­± ºû­×«á·Ó¤ù (¥i½Æ¿ï)"
+                MsgBox "è«‹é¸æ“‡ (Failure Photo) é é¢ ç¶­ä¿®å¾Œç…§ç‰‡ (å¯è¤‡é¸)"
             
         ElseIf ActiveSheet.name = "Failure Photo (2)" Then
-                MsgBox "½Ğ¿ï¾Ü (Failure Photo (2) ­¶­± ºû­×«á·Ó¤ù (¥i½Æ¿ï)"
+                MsgBox "è«‹é¸æ“‡ (Failure Photo (2) é é¢ ç¶­ä¿®å¾Œç…§ç‰‡ (å¯è¤‡é¸)"
             
         ElseIf ActiveSheet.name = "Failure Photo (3)" Then
-                MsgBox "½Ğ¿ï¾Ü (Failure Photo (3) ­¶­± ºû­×«á·Ó¤ù (¥i½Æ¿ï)"
+                MsgBox "è«‹é¸æ“‡ (Failure Photo (3) é é¢ ç¶­ä¿®å¾Œç…§ç‰‡ (å¯è¤‡é¸)"
             
-        ElseIf ActiveSheet.name = "¶i¥X¼t·Ó¤ù" Then
-                MsgBox "½Ğ¿ï¾Ü (¶i¥X¼t·Ó¤ù) ­¶­± ¥X¼t·Ó¤ù (¥i½Æ¿ï)"
+        ElseIf ActiveSheet.name = "é€²å‡ºå» ç…§ç‰‡" Then
+                MsgBox "è«‹é¸æ“‡ (é€²å‡ºå» ç…§ç‰‡) é é¢ å‡ºå» ç…§ç‰‡ (å¯è¤‡é¸)"
         End If
         
     
@@ -544,7 +536,7 @@ Sub Photo(ByVal Row As Integer, ByVal index As Integer)
         
         With fd
                 .AllowMultiSelect = True
-                .ButtonName = "´N¬O§A¤F!!!!"
+                .ButtonName = "å°±æ˜¯ä½ äº†!!!!"
                 
                 If .Show Then
                         For Each sPath In .SelectedItems
@@ -565,7 +557,7 @@ Sub Photo(ByVal Row As Integer, ByVal index As Integer)
         Application.ScreenUpdating = True
         
 End Sub
-Sub ¶}±ÒLogData(ByRef y)
+Sub é–‹å•ŸLogData(ByRef y)
     
         Application.ScreenUpdating = False
         
@@ -573,10 +565,10 @@ Sub ¶}±ÒLogData(ByRef y)
         Set fd = Application.FileDialog(msoFileDialogFilePicker)
         
         With fd
-                .Title = "½Ğ¿ï¾ÜLOGµ§°O¥»ÀÉ®×"
-                .ButtonName = "´N¬O§A¤F!!!!"
-                .Filters.Add "µ§°O¥»ÀÉ®×", "*.txt"
-                MsgBox "½Ğ¿ï¾ÜLOGµ§°O¥»ÀÉ®×"
+                .Title = "è«‹é¸æ“‡LOGç­†è¨˜æœ¬æª”æ¡ˆ"
+                .ButtonName = "å°±æ˜¯ä½ äº†!!!!"
+                .Filters.Add "ç­†è¨˜æœ¬æª”æ¡ˆ", "*.txt"
+                MsgBox "è«‹é¸æ“‡LOGç­†è¨˜æœ¬æª”æ¡ˆ"
                 
                 If .Show Then
                         Workbooks.OpenText (.SelectedItems(1))
@@ -621,9 +613,9 @@ Sub LOGdata(ByVal RMA As String, ByVal MN As String, ByVal SN As String, ByVal E
         Set fd1 = Application.FileDialog(msoFileDialogFilePicker)
         
         With fd1
-                .Title = "½Ğ¿ïAuto burn IN¸ê®Æ"
-                .ButtonName = "´N¬O§A¤F!!!"
-                MsgBox "½Ğ¿ïAuto burn IN¸ê®Æ"
+                .Title = "è«‹é¸Auto burn INè³‡æ–™"
+                .ButtonName = "å°±æ˜¯ä½ äº†!!!"
+                MsgBox "è«‹é¸Auto burn INè³‡æ–™"
         End With
         
         If fd1.Show Then
@@ -649,9 +641,9 @@ Sub LOGdata(ByVal RMA As String, ByVal MN As String, ByVal SN As String, ByVal E
         Set fd2 = Application.FileDialog(msoFileDialogFilePicker)
         
         With fd2
-                .Title = "½Ğ¿ïAuto ignition¸ê®Æ"
-                .ButtonName = "´N¬O§A¤F!!!"
-                MsgBox "½Ğ¿ïAuto ignition¸ê®Æ"
+                .Title = "è«‹é¸Auto ignitionè³‡æ–™"
+                .ButtonName = "å°±æ˜¯ä½ äº†!!!"
+                MsgBox "è«‹é¸Auto ignitionè³‡æ–™"
         End With
 
          If fd2.Show Then
@@ -662,7 +654,7 @@ Sub LOGdata(ByVal RMA As String, ByVal MN As String, ByVal SN As String, ByVal E
                         .[A7] = "M/N:" & MN
                         .[B7] = "S/N:" & SN
                         .[C7] = "Engineer :" & Engineername
-                        .[D11] = "®É¶¡¶¡¹j"
+                        .[D11] = "æ™‚é–“é–“éš”"
                         LF = .Range("A12").End(xlDown).Row
                         For i = 12 To LF
                                 .Range("D" & i).Value = "=TIME(VALUE(MID(A" & i & ",4,2)),VALUE(MID(A" & i & ",7,2)),VALUE(MID(A" & i & ",10,2)))"
@@ -715,9 +707,9 @@ Sub LOGdata(ByVal RMA As String, ByVal MN As String, ByVal SN As String, ByVal E
         Set fd3 = Application.FileDialog(msoFileDialogFilePicker)
         
         With fd3
-                .Title = "½Ğ¿ïROR¸ê®Æ"
-                .ButtonName = "´N¬O§A¤F!!!"
-                MsgBox "½Ğ¿ïROR¸ê®Æ"
+                .Title = "è«‹é¸RORè³‡æ–™"
+                .ButtonName = "å°±æ˜¯ä½ äº†!!!"
+                MsgBox "è«‹é¸RORè³‡æ–™"
         End With
         
         If fd3.Show = -1 Then
