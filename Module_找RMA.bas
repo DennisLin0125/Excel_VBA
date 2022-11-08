@@ -1,4 +1,4 @@
-Attribute VB_Name = "Moduleß‰RMA"
+Attribute VB_Name = "ModuleÊâæRMA"
 Option Explicit
 Function searchMN(ByVal MN As String) As String
         If MN = "3155031-014" Or MN = "3155031-036" Or MN = "3155031-020" Or MN = "3155031-038" Or MN = "3155031-039" Then
@@ -34,7 +34,7 @@ Function searchMN(ByVal MN As String) As String
                 searchMN = "Pinnacle II"
         End If
 End Function
-Sub ±qMain¿…ß‰RMA()
+Sub ÂæûMainÊ™îÊâæRMA()
         Application.ScreenUpdating = False
         Application.DisplayAlerts = False
         
@@ -53,7 +53,7 @@ Sub ±qMain¿…ß‰RMA()
         Set rng = snDennis.Range("A1:A" & DennisRow)
         
         Dim fname$
-        fname = "P:\Service\RMA\Main\Kaitek RMA 2022 main.xls"
+        fname = ""
         
         Dim wb As Workbook
         Set wb = Workbooks.Open(fname, UpdateLinks:=0)
@@ -94,7 +94,7 @@ Sub ±qMain¿…ß‰RMA()
                 .[B2].Resize(myRow, 14) = oArr
         End With
 '=========================================================================
-        fname = "P:\Service\Product\Repair information\customer request list for repair.xlsx"
+        fname = ""
 
         Set wb = Workbooks.Open(fname, UpdateLinks:=0)
         wb.Activate
@@ -105,7 +105,7 @@ Sub ±qMain¿…ß‰RMA()
         Dim MystrAZX$, Mystr2$
         
         Dim TotalCus, CusIndex%, requestRow%
-        TotalCus = Split("CMO3,AUO-L6A,AUO-L5C-T1,CMO5,TSMC6,TSMC3,TSMC5,TSMC8,TSMC15,VISC1,VISC2,VISC3,UMC,PRA,¨¸•˙,≠‚•®-BD1,≠‚•®-BD2", ",")
+        TotalCus = Split("CMO3,AUO-L6A,AUO-L5C-T1,CMO5,TSMC6,TSMC3,TSMC5,TSMC8,TSMC15,VISC1,VISC2,VISC3,UMC,PRA,ÁæéÂÖâ,ÂáåÂ∑®-BD1,ÂáåÂ∑®-BD2", ",")
         
         Dim tempRow%
         tempRow = 1
@@ -113,10 +113,10 @@ Sub ±qMain¿…ß‰RMA()
         For Each sh In wb.Worksheets
                 sh.Activate
                 Select Case sh.name
-                Case Is = "AZX ∫˚≠◊ª›®D"
+                Case Is = "AZX Á∂≠‰øÆÈúÄÊ±Ç"
                         Dim AZXRow%
                         AZXRow = Range("A" & Rows.Count).End(xlUp).Row
-                        MystrAZX = "™`∑N®∆∂µ : " & Chr(10)
+                        MystrAZX = "Ê≥®ÊÑè‰∫ãÈ†Ö : " & Chr(10)
                         For i = 1 To AZXRow
                                 If UCase(Range("A" & i)) = "ALL" And Range("A" & i).Font.Strikethrough <> True Then
                                         MystrAZX = MystrAZX & Range("B" & i) & Chr(10)
@@ -158,7 +158,7 @@ Sub ±qMain¿…ß‰RMA()
                 Case Is = "RFDS1250"
                         Dim RFDS1250Row%, MystrRFDS1250$, Mystr6$
                         RFDS1250Row = Range("A" & Rows.Count).End(xlUp).Row
-                        MystrRFDS1250 = "™`∑N®∆∂µ : " & Chr(10)
+                        MystrRFDS1250 = "Ê≥®ÊÑè‰∫ãÈ†Ö : " & Chr(10)
                         For i = 1 To RFDS1250Row
                                 If UCase(Range("A" & i)) = "ALL" And Range("A" & i).Font.Strikethrough <> True Then
                                         MystrRFDS1250 = MystrRFDS1250 & Range("B" & i) & Chr(10)
@@ -184,7 +184,7 @@ Sub ±qMain¿…ß‰RMA()
                 Case Is = "MFA"
                         Dim MFARow%, MystrMFA$, Mystr7$
                         MFARow = Range("A" & Rows.Count).End(xlUp).Row
-                        MystrMFA = "™`∑N®∆∂µ : " & Chr(10)
+                        MystrMFA = "Ê≥®ÊÑè‰∫ãÈ†Ö : " & Chr(10)
                         For i = 1 To MFARow
                                 If UCase(Range("A" & i)) = "ALL" And Range("A" & i).Font.Strikethrough <> True Then
                                         MystrMFA = MystrMFA & Range("B" & i) & Chr(10)
@@ -213,7 +213,7 @@ Sub ±qMain¿…ß‰RMA()
                 Case Is = "RFG1250 "
                         Dim RFG1250Row%, Mystr1250$, Mystr5$
                         RFG1250Row = Range("A" & Rows.Count).End(xlUp).Row
-                        Mystr1250 = "™`∑N®∆∂µ : " & Chr(10)
+                        Mystr1250 = "Ê≥®ÊÑè‰∫ãÈ†Ö : " & Chr(10)
                         For i = 1 To RFG1250Row
                                 If UCase(Range("A" & i)) = "ALL" And Range("A" & i).Font.Strikethrough <> True Then
                                         Mystr1250 = Mystr1250 & Range("B" & i) & Chr(10)
@@ -239,7 +239,7 @@ Sub ±qMain¿…ß‰RMA()
                 Case Is = "RFG2K2V"
                         Dim RFG2K2VRow%, Mystr2K2V$, Mystr3
                         RFG2K2VRow = Range("A" & Rows.Count).End(xlUp).Row
-                        Mystr2K2V = "™`∑N®∆∂µ : " & Chr(10)
+                        Mystr2K2V = "Ê≥®ÊÑè‰∫ãÈ†Ö : " & Chr(10)
                         For i = 1 To RFG2K2VRow
                                 If UCase(Range("A" & i)) = "ALL" And Range("A" & i).Font.Strikethrough <> True Then
                                         Mystr2K2V = Mystr2K2V & Range("B" & i) & Chr(10)
@@ -274,7 +274,7 @@ Sub ±qMain¿…ß‰RMA()
                 Case Is = "RFG5500"
                 Dim RFG5500Row%, Mystr5500$, Mystr4$
                 RFG5500Row = Range("A" & Rows.Count).End(xlUp).Row
-                Mystr5500 = "™`∑N®∆∂µ : " & Chr(10)
+                Mystr5500 = "Ê≥®ÊÑè‰∫ãÈ†Ö : " & Chr(10)
                 For i = 1 To RFG5500Row
                         If UCase(Range("A" & i)) = "ALL" And Range("A" & i).Font.Strikethrough <> True Then
                                 Mystr5500 = Mystr5500 & Range("B" & i) & Chr(10)
@@ -311,7 +311,7 @@ Sub ±qMain¿…ß‰RMA()
                 Case Is = "PNCL"
                         Dim PNCLRow%, MystrPNCL$, Mystr8$
                         PNCLRow = Range("A" & Rows.Count).End(xlUp).Row
-                        MystrPNCL = "™`∑N®∆∂µ : " & Chr(10)
+                        MystrPNCL = "Ê≥®ÊÑè‰∫ãÈ†Ö : " & Chr(10)
                         For i = 1 To PNCLRow
                                 If UCase(Range("A" & i)) = "ALL" And Range("A" & i).Font.Strikethrough <> True Then
                                         MystrPNCL = MystrPNCL & Range("C" & i) & Chr(10)
@@ -334,9 +334,9 @@ Sub ±qMain¿…ß‰RMA()
                                 End If
                         Next c
 '=================================================================================
-                Case Is = "AZX"                      'ºW•[™˝ß‹
+                Case Is = "AZX"                      'Â¢ûÂä†ÈòªÊäó
                         Dim oMn$, oStr$, AZXarr
-                        AZXarr = Split("TSMC6,TSMC3,TSMC5,TSMC8,TSMC14,TSMC15,VISC1,VISC2,UMC-©“¶≥ºt∞œ,VISC3", ",")
+                        AZXarr = Split("TSMC6,TSMC3,TSMC5,TSMC8,TSMC14,TSMC15,VISC1,VISC2,UMC-ÊâÄÊúâÂª†ÂçÄ,VISC3", ",")
                         For Each c In rng2
                                 If c = "AZX 63" Or c = "AZX 72" Then
                                         MyCus = snDennis.Range("B" & c.Row)
@@ -352,49 +352,49 @@ Sub ±qMain¿…ß‰RMA()
                                 
                                                         If CuzRng.Value = MyCus And MyCus = "TSMC8" Then
                                                                 If oMn = "014" Or oMn = "020" Or oMn = "036" Or oMn = "038" Or oMn = "039" Then
-                                                                        snDennis.Range("N" & c.Row) = ™˝ß‹§∫Æe(oROW, oColumn)
+                                                                        snDennis.Range("N" & c.Row) = ÈòªÊäóÂÖßÂÆπ(oROW, oColumn)
                                                                 End If
                                                         ElseIf CuzRng.Value = MyCus And MyCus = "TSMC5" Then
                                                                 If oMn = "014" Or oMn = "020" Or oMn = "036" Then
-                                                                        snDennis.Range("N" & c.Row) = ™˝ß‹§∫Æe(oROW, oColumn)
+                                                                        snDennis.Range("N" & c.Row) = ÈòªÊäóÂÖßÂÆπ(oROW, oColumn)
                                                                 End If
                                                         ElseIf CuzRng.Value = MyCus And MyCus = "TSMC14" Then
                                                                 If oMn = "037" Or oMn = "043" Then
-                                                                        snDennis.Range("N" & c.Row) = ™˝ß‹§∫Æe(oROW, oColumn)
+                                                                        snDennis.Range("N" & c.Row) = ÈòªÊäóÂÖßÂÆπ(oROW, oColumn)
                                                                 End If
                                                         ElseIf CuzRng.Value = MyCus And MyCus = "TSMC15" Then
                                                                 If oMn = "037" Or oMn = "043" Then
-                                                                        snDennis.Range("N" & c.Row) = ™˝ß‹§∫Æe(oROW, oColumn)
+                                                                        snDennis.Range("N" & c.Row) = ÈòªÊäóÂÖßÂÆπ(oROW, oColumn)
                                                                 End If
                                                         ElseIf CuzRng.Value = MyCus And MyCus = "VISC1" Then
                                                                 If oMn = "014" Or oMn = "020" Or oMn = "036" Or oMn = "038" Or oMn = "039" Then
-                                                                        snDennis.Range("N" & c.Row) = ™˝ß‹§∫Æe(oROW, oColumn)
+                                                                        snDennis.Range("N" & c.Row) = ÈòªÊäóÂÖßÂÆπ(oROW, oColumn)
                                                                 End If
                                                         ElseIf CuzRng.Value = MyCus And MyCus = "VISC2" Then
                                                                 If oMn = "014" Or oMn = "020" Or oMn = "036" Or oMn = "038" Or oMn = "039" Then
-                                                                        snDennis.Range("N" & c.Row) = ™˝ß‹§∫Æe(oROW, oColumn)
+                                                                        snDennis.Range("N" & c.Row) = ÈòªÊäóÂÖßÂÆπ(oROW, oColumn)
                                                                 End If
                                                         ElseIf CuzRng.Value = MyCus And MyCus = "VISC3" Then
                                                                 If oMn = "014" Or oMn = "020" Or oMn = "036" Or oMn = "038" Or oMn = "039" Then
-                                                                        snDennis.Range("N" & c.Row) = ™˝ß‹§∫Æe(oROW, oColumn)
+                                                                        snDennis.Range("N" & c.Row) = ÈòªÊäóÂÖßÂÆπ(oROW, oColumn)
                                                                 End If
 '======================================================================================
                                                         ElseIf Left(CuzRng.Value, 3) = Left(MyCus, 3) And Left(MyCus, 3) = "UMC" Then
                                                                 If oMn = "014" Or oMn = "020" Or oMn = "036" Or oMn = "038" Or oMn = "039" Then
-                                                                        snDennis.Range("N" & c.Row) = ™˝ß‹§∫Æe(oROW, oColumn)
+                                                                        snDennis.Range("N" & c.Row) = ÈòªÊäóÂÖßÂÆπ(oROW, oColumn)
                                                                 End If
 '======================================================================================
                                                         ElseIf CuzRng.Value = MyCus And MyCus = "TSMC3" Then
                                                                 If oMn = "014" Then
-                                                                        snDennis.Range("N" & c.Row) = ™˝ß‹§∫Æe(oROW, oColumn)
+                                                                        snDennis.Range("N" & c.Row) = ÈòªÊäóÂÖßÂÆπ(oROW, oColumn)
                                                                 ElseIf oMn = "023" Or oMn = "020" Or oMn = "039" Then
-                                                                        snDennis.Range("N" & c.Row) = ™˝ß‹§∫Æe2(oROW, oColumn)
+                                                                        snDennis.Range("N" & c.Row) = ÈòªÊäóÂÖßÂÆπ2(oROW, oColumn)
                                                                 End If
                                                         ElseIf CuzRng.Value = MyCus And MyCus = "TSMC6" Then
                                                                 If oMn = "014" Then
-                                                                        snDennis.Range("N" & c.Row) = ™˝ß‹§∫Æe(oROW, oColumn)
+                                                                        snDennis.Range("N" & c.Row) = ÈòªÊäóÂÖßÂÆπ(oROW, oColumn)
                                                                 ElseIf oMn = "023" Or oMn = "020" Or oMn = "036" Or oMn = "038" Or oMn = "039" Then
-                                                                        snDennis.Range("N" & c.Row) = ™˝ß‹§∫Æe2(oROW, oColumn)
+                                                                        snDennis.Range("N" & c.Row) = ÈòªÊäóÂÖßÂÆπ2(oROW, oColumn)
                                                                 End If
                                                         End If
                                                 End If
@@ -405,31 +405,31 @@ Sub ±qMain¿…ß‰RMA()
         Next
         wb.Close False
         snDennis.Activate
-        MsgBox "ßπ¶®"
+        MsgBox "ÂÆåÊàê"
         Application.ScreenUpdating = True
         Application.DisplayAlerts = True
 End Sub
-Private Function ™˝ß‹§∫Æe(ByVal oROW As Integer, ByVal oColumn As Integer) As String
+Private Function ÈòªÊäóÂÖßÂÆπ(ByVal oROW As Integer, ByVal oColumn As Integer) As String
         Dim oStr$
-        oStr = "Shunt πq¿£ : " & Cells(oROW + 2, oColumn) & "V" & Chr(10)
-        oStr = oStr & "Series πq¿£ : " & Cells(oROW + 3, oColumn) & "V" & Chr(10) & Chr(10)
-        oStr = oStr & "™˝ß‹¬I : " & Cells(oROW + 4, oColumn) & Chr(10) & Chr(10)
-        oStr = oStr & "E-chuck •øπq¿£ : " & Cells(oROW + 5, oColumn) & Chr(10)
-        oStr = oStr & "E-chuck ≠tπq¿£ : " & Cells(oROW + 6, oColumn) & Chr(10) & Chr(10)
-        oStr = oStr & "OFF SETπq¿£ : " & Cells(oROW + 7, oColumn) & Chr(10)
-        oStr = oStr & "OFF SETπq¨y : " & Cells(oROW + 8, oColumn) & Chr(10)
-        ™˝ß‹§∫Æe = oStr
+        oStr = "Shunt ÈõªÂ£ì : " & Cells(oROW + 2, oColumn) & "V" & Chr(10)
+        oStr = oStr & "Series ÈõªÂ£ì : " & Cells(oROW + 3, oColumn) & "V" & Chr(10) & Chr(10)
+        oStr = oStr & "ÈòªÊäóÈªû : " & Cells(oROW + 4, oColumn) & Chr(10) & Chr(10)
+        oStr = oStr & "E-chuck Ê≠£ÈõªÂ£ì : " & Cells(oROW + 5, oColumn) & Chr(10)
+        oStr = oStr & "E-chuck Ë≤†ÈõªÂ£ì : " & Cells(oROW + 6, oColumn) & Chr(10) & Chr(10)
+        oStr = oStr & "OFF SETÈõªÂ£ì : " & Cells(oROW + 7, oColumn) & Chr(10)
+        oStr = oStr & "OFF SETÈõªÊµÅ : " & Cells(oROW + 8, oColumn) & Chr(10)
+        ÈòªÊäóÂÖßÂÆπ = oStr
 End Function
-Private Function ™˝ß‹§∫Æe2(ByVal oROW As Integer, ByVal oColumn As Integer) As String
+Private Function ÈòªÊäóÂÖßÂÆπ2(ByVal oROW As Integer, ByVal oColumn As Integer) As String
         Dim oStr$
-        oStr = "Shunt πq¿£ : " & Cells(oROW + 2, oColumn + 1) & "V" & Chr(10)
-        oStr = oStr & "Series πq¿£ : " & Cells(oROW + 3, oColumn + 1) & "V" & Chr(10) & Chr(10)
-        oStr = oStr & "™˝ß‹¬I : " & Cells(oROW + 4, oColumn + 1) & Chr(10) & Chr(10)
-        oStr = oStr & "E-chuck •øπq¿£ : " & Cells(oROW + 5, oColumn) & Chr(10)
-        oStr = oStr & "E-chuck ≠tπq¿£ : " & Cells(oROW + 6, oColumn) & Chr(10) & Chr(10)
-        oStr = oStr & "OFF SETπq¿£ : " & Cells(oROW + 7, oColumn) & Chr(10)
-        oStr = oStr & "OFF SETπq¨y : " & Cells(oROW + 8, oColumn) & Chr(10)
-        ™˝ß‹§∫Æe2 = oStr
+        oStr = "Shunt ÈõªÂ£ì : " & Cells(oROW + 2, oColumn + 1) & "V" & Chr(10)
+        oStr = oStr & "Series ÈõªÂ£ì : " & Cells(oROW + 3, oColumn + 1) & "V" & Chr(10) & Chr(10)
+        oStr = oStr & "ÈòªÊäóÈªû : " & Cells(oROW + 4, oColumn + 1) & Chr(10) & Chr(10)
+        oStr = oStr & "E-chuck Ê≠£ÈõªÂ£ì : " & Cells(oROW + 5, oColumn) & Chr(10)
+        oStr = oStr & "E-chuck Ë≤†ÈõªÂ£ì : " & Cells(oROW + 6, oColumn) & Chr(10) & Chr(10)
+        oStr = oStr & "OFF SETÈõªÂ£ì : " & Cells(oROW + 7, oColumn) & Chr(10)
+        oStr = oStr & "OFF SETÈõªÊµÅ : " & Cells(oROW + 8, oColumn) & Chr(10)
+        ÈòªÊäóÂÖßÂÆπ2 = oStr
 End Function
 
 
