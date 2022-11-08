@@ -29,13 +29,13 @@ Sub PNCL20K()
         arr = Range("C30:C40")
         i = 0
         For Each c In arr
-                temp(i) = Int(c * ¶Ã¼ÆA)
+                temp(i) = Int(c * 亂數A)
                 i = i + 1
         Next
         Range("D31").Resize(UBound(temp)) = Application.WorksheetFunction.Transpose(temp)
 End Sub
 
-Function ¶Ã¼ÆA() As Double
+Function 亂數A() As Double
         Dim MyValu%
         Dim Min%
         Dim Max%
@@ -49,6 +49,6 @@ Function ¶Ã¼ÆA() As Double
         Max = UBound(arr)
         MyValue = Int((Max - Min + 1) * Rnd() + Min)
                
-        ¶Ã¼ÆA = arr(MyValue)
+        亂數A = arr(MyValue)
         
 End Function
