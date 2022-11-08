@@ -1,7 +1,7 @@
 Attribute VB_Name = "ModuleTodayW3M"
 Option Explicit
-Sub ·j´M¤µ¤é«O©T()
-Attribute ·j´M¤µ¤é«O©T.VB_ProcData.VB_Invoke_Func = "w\n14"
+Sub æœå°‹ä»Šæ—¥ä¿å›º()
+Attribute æœå°‹ä»Šæ—¥ä¿å›º.VB_ProcData.VB_Invoke_Func = "w\n14"
         Application.ScreenUpdating = False
         Application.DisplayAlerts = False
         
@@ -9,10 +9,10 @@ Attribute ·j´M¤µ¤é«O©T.VB_ProcData.VB_Invoke_Func = "w\n14"
         
         myDate = Format(Date, "yyyymmdd")
         
-        Year = Mid(myDate, 1, 4) '¨ú¦~¤À
+        Year = Mid(myDate, 1, 4) 'å–å¹´åˆ†
         
-        fpathThisYear = "P:\Service\RMA\Main\Kaitek RMA " & Year & " main.xls"
-        fpathBeforeYear = "P:\Service\RMA\Main\Kaitek RMA " & Year - 1 & " main.xls"
+        fpathThisYear = ""
+        fpathBeforeYear = ""
         
         Dim UpdateLinks%
         Set wb = Workbooks.Open(fpathThisYear, UpdateLinks:=0)
@@ -29,40 +29,40 @@ Attribute ·j´M¤µ¤é«O©T.VB_ProcData.VB_Invoke_Func = "w\n14"
         myDay = Date
         
         wb.Activate
-        LF = Range("A" & Rows.Count).End(xlUp).Row  '³Ì«á¤@¦C
+        LF = Range("A" & Rows.Count).End(xlUp).Row  'æœ€å¾Œä¸€åˆ—
         
         Dim i%
-        For i = 1 To LF  '´M¹MMainÀÉ
-                If InStr(Cells(i, "C"), myDay) Then   '­pºâ·í¤Ñ°e­×¥x¼Æ
+        For i = 1 To LF  'å°‹éMainæª”
+                If InStr(Cells(i, "C"), myDay) Then   'è¨ˆç®—ç•¶å¤©é€ä¿®å°æ•¸
                         Total = Total + 1
                 End If
         Next i
         
-        For i = 1 To LF   '´M¹MMainÀÉ
-                If InStr(Cells(i, "C"), myDay) * InStr(Cells(i, "Q"), "3") Then '·í¤Ñ¬O§_¦³«O©T
+        For i = 1 To LF   'å°‹éMainæª”
+                If InStr(Cells(i, "C"), myDay) * InStr(Cells(i, "Q"), "3") Then 'ç•¶å¤©æ˜¯å¦æœ‰ä¿å›º
                         Dim tempSn$, tempCust$
-                        tempSn = Cells(i, "K")    '  ¼È¦sSN
-                        tempCust = Cells(i, "D") '  ¼È¦s«È¤á¦WºÙ
+                        tempSn = Cells(i, "K")    '  æš«å­˜SN
+                        tempCust = Cells(i, "D") '  æš«å­˜å®¢æˆ¶åç¨±
                         Dim rngSn As Range
-                        Set rngSn = Range("K1:K" & i - 1).Find(What:=tempSn, After:=Cells(i - 1, "K"), LookAt:=xlWhole, SearchDirection:=xlPrevious) '·j´M¬O§_¦³«O©T
+                        Set rngSn = Range("K1:K" & i - 1).Find(What:=tempSn, After:=Cells(i - 1, "K"), LookAt:=xlWhole, SearchDirection:=xlPrevious) 'æœå°‹æ˜¯å¦æœ‰ä¿å›º
                         
                         If Not rngSn Is Nothing Then
                                 Dim myRow%
                                 myRow = rngSn.Row
-                                If Range("D" & myRow) = tempCust Then      '½T»{«O©TªºSN¬O¦P­Ó¼t°Ó
+                                If Range("D" & myRow) = tempCust Then      'ç¢ºèªä¿å›ºçš„SNæ˜¯åŒå€‹å» å•†
                                         Dim engineer$, LifeTime As Double, RMA$, Reson$
                                         engineer = Cells(myRow, "T")
                                         LifeTime = Date - Cells(myRow, "P")
                                         RMA = Cells(myRow, "A")
                                         Reson = Cells(myRow, "Y")
-                                ElseIf Left(Range("D" & myRow), 3) = "UMC" And Left(tempCust, 3) = "UMC" Then  '§PÂ_¬O§_¬°UMC
+                                ElseIf Left(Range("D" & myRow), 3) = "UMC" And Left(tempCust, 3) = "UMC" Then  'åˆ¤æ–·æ˜¯å¦ç‚ºUMC
                                         engineer = Cells(myRow, "T")
                                         LifeTime = Date - Cells(myRow, "P")
                                         RMA = Cells(myRow, "A")
                                         Reson = Cells(myRow, "Y")
                                 Else
                                         Set firstRng = rngSn
-                                        Do                                     '§ä¤U¤@­Ó«O©T
+                                        Do                                     'æ‰¾ä¸‹ä¸€å€‹ä¿å›º
                                                 Set rngSn = Range("K1:K" & i - 1).FindPrevious(rngSn)
                                                 myRow = rngSn.Row
                                                 If Range("D" & myRow) = tempCust Then
@@ -71,7 +71,7 @@ Attribute ·j´M¤µ¤é«O©T.VB_ProcData.VB_Invoke_Func = "w\n14"
                                                         RMA = Cells(myRow, "A")
                                                         Reson = Cells(myRow, "Y")
                                                         Exit Do
-                                                ElseIf Left(Range("D" & myRow), 3) = "UMC" And Left(tempCust, 3) = "UMC" Then  '§PÂ_¬O§_¬°UMC
+                                                ElseIf Left(Range("D" & myRow), 3) = "UMC" And Left(tempCust, 3) = "UMC" Then  'åˆ¤æ–·æ˜¯å¦ç‚ºUMC
                                                         engineer = Cells(myRow, "T")
                                                         LifeTime = Date - Cells(myRow, "P")
                                                         RMA = Cells(myRow, "A")
@@ -92,19 +92,19 @@ Attribute ·j´M¤µ¤é«O©T.VB_ProcData.VB_Invoke_Func = "w\n14"
                                 
                                 If Not rng Is Nothing Then
                                         myRow = rng.Row
-                                        If Range("D" & myRow) = tempCust Then   '½T»{«O©TªºSN¬O¦P­Ó¼t°Ó
+                                        If Range("D" & myRow) = tempCust Then   'ç¢ºèªä¿å›ºçš„SNæ˜¯åŒå€‹å» å•†
                                                 engineer = Cells(myRow, "T")
                                                 LifeTime = Date - Cells(myRow, "P")
                                                 RMA = Cells(myRow, "A")
                                                 Reson = Cells(myRow, "Y")
-                                        ElseIf Left(Range("D" & myRow), 3) = "UMC" And Left(tempCust, 3) = "UMC" Then  '§PÂ_¬O§_¬°UMC
+                                        ElseIf Left(Range("D" & myRow), 3) = "UMC" And Left(tempCust, 3) = "UMC" Then  'åˆ¤æ–·æ˜¯å¦ç‚ºUMC
                                                 engineer = Cells(myRow, "T")
                                                 LifeTime = Date - Cells(myRow, "P")
                                                 RMA = Cells(myRow, "A")
                                                 Reson = Cells(myRow, "Y")
                                         Else
                                                 Set firstRng = rng
-                                                Do                                     '§ä¤U¤@­Ó«O©T
+                                                Do                                     'æ‰¾ä¸‹ä¸€å€‹ä¿å›º
                                                         Set rng = Range("K1:K" & LF2).FindPrevious(rng)
                                                         myRow = rng.Row
                                                         If Range("D" & myRow) = tempCust Then
@@ -113,7 +113,7 @@ Attribute ·j´M¤µ¤é«O©T.VB_ProcData.VB_Invoke_Func = "w\n14"
                                                                 RMA = Cells(myRow, "A")
                                                                 Reson = Cells(myRow, "Y")
                                                                 Exit Do
-                                                        ElseIf Left(Range("D" & myRow), 3) = "UMC" And Left(tempCust, 3) = "UMC" Then  '§PÂ_¬O§_¬°UMC
+                                                        ElseIf Left(Range("D" & myRow), 3) = "UMC" And Left(tempCust, 3) = "UMC" Then  'åˆ¤æ–·æ˜¯å¦ç‚ºUMC
                                                                 engineer = Cells(myRow, "T")
                                                                 LifeTime = Date - Cells(myRow, "P")
                                                                 RMA = Cells(myRow, "A")
@@ -128,29 +128,29 @@ Attribute ·j´M¤µ¤é«O©T.VB_ProcData.VB_Invoke_Func = "w\n14"
                         End If
                         
                         If times = 1 Then
-                                MsgBox "¤é´Á : " & myDay & Chr(10) & Chr(10) & "¦@¦¬¨ì " & Total & " ¥x¾÷¾¹" & Chr(10) & Chr(10) & "¤µ¤é¦³«O©T"
+                                MsgBox "æ—¥æœŸ : " & myDay & Chr(10) & Chr(10) & "å…±æ”¶åˆ° " & Total & " å°æ©Ÿå™¨" & Chr(10) & Chr(10) & "ä»Šæ—¥æœ‰ä¿å›º"
                         End If
-                        myStr = "¤µ¤é²Ä " & times & " ¥x«O©T" & Chr(10) & Chr(10)
-                        myStr = myStr & "«O©T¤uµ{®v : " & engineer & Chr(10) & Chr(10)
-                        myStr = myStr & "«È¤á : " & Cells(i, "D") & Chr(10) & Chr(10)
+                        myStr = "ä»Šæ—¥ç¬¬ " & times & " å°ä¿å›º" & Chr(10) & Chr(10)
+                        myStr = myStr & "ä¿å›ºå·¥ç¨‹å¸« : " & engineer & Chr(10) & Chr(10)
+                        myStr = myStr & "å®¢æˆ¶ : " & Cells(i, "D") & Chr(10) & Chr(10)
                         myStr = myStr & "MN : " & Cells(i, "I") & Chr(10) & Chr(10)
                         myStr = myStr & "SN : " & Cells(i, "K") & Chr(10) & Chr(10)
-                        myStr = myStr & "¾÷ºØ : " & Cells(i, "H") & Chr(10) & Chr(10)
+                        myStr = myStr & "æ©Ÿç¨® : " & Cells(i, "H") & Chr(10) & Chr(10)
                         
-                        myStr = myStr & "«e¦¸RMA : " & RMA & Chr(10) & Chr(10)
-                        myStr = myStr & "³o¦¸RMA : " & Cells(i, "A") & Chr(10) & Chr(10)
+                        myStr = myStr & "å‰æ¬¡RMA : " & RMA & Chr(10) & Chr(10)
+                        myStr = myStr & "é€™æ¬¡RMA : " & Cells(i, "A") & Chr(10) & Chr(10)
                         
-                        myStr = myStr & "«e¦¸¤U¾÷­ì¦] : " & Reson & Chr(10) & Chr(10)
-                        myStr = myStr & "¦¹¦¸¤U¾÷­ì¦] : " & Cells(i, "Y") & Chr(10) & Chr(10)
+                        myStr = myStr & "å‰æ¬¡ä¸‹æ©ŸåŸå›  : " & Reson & Chr(10) & Chr(10)
+                        myStr = myStr & "æ­¤æ¬¡ä¸‹æ©ŸåŸå›  : " & Cells(i, "Y") & Chr(10) & Chr(10)
                         
-                        myStr = myStr & "LifeTime :  " & LifeTime & " ¤Ñ"
+                        myStr = myStr & "LifeTime :  " & LifeTime & " å¤©"
                         times = times + 1
                         MsgBox myStr
                 End If
         Next i
         
         If times = 1 Then
-                MsgBox "¤é´Á : " & myDay & Chr(10) & Chr(10) & "¦@¦¬¨ì " & Total & " ¥x¾÷¾¹" & Chr(10) & Chr(10) & "¥Ø«e¨S¦³«O©T"
+                MsgBox "æ—¥æœŸ : " & myDay & Chr(10) & Chr(10) & "å…±æ”¶åˆ° " & Total & " å°æ©Ÿå™¨" & Chr(10) & Chr(10) & "ç›®å‰æ²’æœ‰ä¿å›º"
         End If
         
         wb.Close False
