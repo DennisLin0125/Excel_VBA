@@ -1,14 +1,14 @@
-Attribute VB_Name = "Module1²¾°ÊÀÉ®×"
-Sub ²¾°ÊÀÉ®×()
+Attribute VB_Name = "Module1ç§»å‹•æª”æ¡ˆ"
+Sub ç§»å‹•æª”æ¡ˆ()
     
     Dim fd As FileDialog
     Set fd = Application.FileDialog(msoFileDialogFolderPicker)
     
-    SN = InputBox("½Ğ¿é¤J­n²¾°ÊªºÀÉ®×SN:")
+    SN = InputBox("è«‹è¼¸å…¥è¦ç§»å‹•çš„æª”æ¡ˆSN:")
     
-    fd.Title = "½Ğ¿ï¾Ü­n²¾°ÊªºÀÉ®×"
+    fd.Title = "è«‹é¸æ“‡è¦ç§»å‹•çš„æª”æ¡ˆ"
     
-    fd.InitialFileName = "D:\Users\Dlin\Desktop\·Ó¤ù"
+    fd.InitialFileName = ""
     
     If fd.Show = -1 Then
         
@@ -16,9 +16,9 @@ Sub ²¾°ÊÀÉ®×()
     
         Set fd2 = Application.FileDialog(msoFileDialogFolderPicker)
         
-        fd2.Title = "½Ğ¿ï¾Ü­n²¾°Ê¨ì­ş­Ó¸ê®Æ§¨"
+        fd2.Title = "è«‹é¸æ“‡è¦ç§»å‹•åˆ°å“ªå€‹è³‡æ–™å¤¾"
         
-        fd2.InitialFileName = "P:\Service\Repair Picture"
+        fd2.InitialFileName = ""
             
         If fd2.Show = -1 Then
         
@@ -30,7 +30,7 @@ Sub ²¾°ÊÀÉ®×()
             
             fs.DeleteFolder Source
                 
-            MsgBox "³B²z§¹¦¨"
+            MsgBox "è™•ç†å®Œæˆ"
             
         End If
         
