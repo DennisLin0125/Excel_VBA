@@ -1,20 +1,20 @@
-Attribute VB_Name = "ModuleFIND∑j¥M"
-Sub FIND∑j¥M()
+Attribute VB_Name = "ModuleFINDÊêúÂ∞ã"
+Sub FINDÊêúÂ∞ã()
     Application.ScreenUpdating = False
     Application.DisplayAlerts = False
     
     myTime = Time
     
     Dim rng As Range
-    Set rng = Workbooks("RMA by Dennis.xls").Worksheets("∑j¥M").Range("A6").CurrentRegion
+    Set rng = Workbooks("RMA by Dennis.xls").Worksheets("ÊêúÂ∞ã").Range("A6").CurrentRegion
     rng.Offset(1).ClearContents
     Set rng = Nothing
     
     Dim snRng As Range
-    Set snRng = Workbooks("RMA by Dennis.xls").Worksheets("∑j¥M").Range("B1")
+    Set snRng = Workbooks("RMA by Dennis.xls").Worksheets("ÊêúÂ∞ã").Range("B1")
     
     Dim snDennis As Worksheet
-    Set snDennis = Workbooks("RMA by Dennis.xls").Worksheets("∑j¥M")
+    Set snDennis = Workbooks("RMA by Dennis.xls").Worksheets("ÊêúÂ∞ã")
     
     Dim RmaStartYear As Range
     Dim RmaStopYear As Range
@@ -29,7 +29,7 @@ Sub FIND∑j¥M()
     For i = RmaStartYear To RmaStopYear Step -1
     
         Dim fname$
-        fname = "P:\Service\RMA\Main\Kaitek RMA " & i & " main.xls"
+        fname = ""
         
         Dim wb As Workbook
         Set wb = Workbooks.Open(fname)
@@ -58,15 +58,15 @@ Sub FIND∑j¥M()
                 RowIndex = machine.Row
                 snDennis.Range("B" & Row) = Range("A" & RowIndex)  'RMA
                 snDennis.Range("C" & Row) = Range("C" & RowIndex) 'call date
-                snDennis.Range("D" & Row) = Range("D" & RowIndex)  '´»§·
-                snDennis.Range("E" & Row) = Range("G" & RowIndex)  'æ˜∫ÿ
+                snDennis.Range("D" & Row) = Range("D" & RowIndex)  'ÂÆ¢Êà∂
+                snDennis.Range("E" & Row) = Range("G" & RowIndex)  'Ê©üÁ®Æ
                 snDennis.Range("F" & Row) = Range("I" & RowIndex)  'MN
                 snDennis.Range("G" & Row) = Range("K" & RowIndex) 'SN
                 snDennis.Range("H" & Row) = Range("P" & RowIndex)  'Ship date
                 snDennis.Range("I" & Row) = Range("T" & RowIndex) 'Engineer
                 snDennis.Range("J" & Row) = Range("Q" & RowIndex)  'Warranty Type
                 snDennis.Range("K" & Row) = Range("U" & RowIndex)  'NPO
-                snDennis.Range("L" & Row) = Range("Y" & RowIndex)  '¨GªŸ§∫Æe
+                snDennis.Range("L" & Row) = Range("Y" & RowIndex)  'ÊïÖÈöúÂÖßÂÆπ
                 Row = Row + 1
                 
                 Set machine = Range("K1:K" & LF).FindNext(machine)
@@ -86,7 +86,7 @@ Sub FIND∑j¥M()
         If snDennis.Range("H" & i + 1) = "" Then
                 snDennis.Range("A" & i) = ""
         Else
-                snDennis.Range("A" & i) = (snDennis.Range("C" & i) - snDennis.Range("H" & i + 1)) & " §—"
+                snDennis.Range("A" & i) = (snDennis.Range("C" & i) - snDennis.Range("H" & i + 1)) & " Â§©"
         End If
     Next
     
@@ -102,7 +102,7 @@ Sub FIND∑j¥M()
     myMin = Minute(myTime)
     mySec = Second(myTime)
     
-    MsgBox "∑j¥Mßπ≤¶" & vbLf & vbLf & "®œ•ŒÆ…∂°" & myMin & "§¿" & mySec & "¨Ì°C"
+    MsgBox "ÊêúÂ∞ãÂÆåÁï¢" & vbLf & vbLf & "‰ΩøÁî®ÊôÇÈñì" & myMin & "ÂàÜ" & mySec & "Áßí„ÄÇ"
     
     Application.DisplayAlerts = True
     Application.ScreenUpdating = True
