@@ -1,4 +1,4 @@
-Attribute VB_Name = "Module¥¼¶}ÀÉ®×§ä¸ê®Æ"
+Attribute VB_Name = "Moduleæœªé–‹æª”æ¡ˆæ‰¾è³‡æ–™"
 Private Function GetValue(Path, file, sheet, ref)
 
         If Right(Path, 1) <> "\" Then Path = Path & "\"
@@ -15,9 +15,9 @@ Private Function GetValue(Path, file, sheet, ref)
         
 End Function
 Sub TestGetValue()
-        P = "P:\Service\RMA\WR\2020"
-        f = "P20109.xls"
-        s = "RMA"
+        P = ""
+        f = ""
+        s = ""
         a = "F11"
         
         Dim strLen
