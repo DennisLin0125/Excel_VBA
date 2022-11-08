@@ -1,6 +1,6 @@
-Attribute VB_Name = "Module½Æ»sRMA¨ì¥D­¶"
-Sub ½Æ»sRMA()
-Attribute ½Æ»sRMA.VB_ProcData.VB_Invoke_Func = " \n14"
+Attribute VB_Name = "Moduleè¤‡è£½RMA"
+Sub è¤‡è£½RMA()
+Attribute è¤‡è£½RMA.VB_ProcData.VB_Invoke_Func = " \n14"
         Application.ScreenUpdating = False
         Dim myRow%, DRow%
         
