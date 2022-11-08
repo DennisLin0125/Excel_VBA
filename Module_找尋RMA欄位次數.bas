@@ -1,5 +1,5 @@
-Attribute VB_Name = "Moduleß‰¥MRMAƒÊ¶Ï¶∏º∆"
-Sub ß‰¥MRMAƒÊ¶Ï()
+Attribute VB_Name = "ModuleÊâæÂ∞ãRMAÊ¨Ñ‰ΩçÊ¨°Êï∏"
+Sub ÊâæÂ∞ãRMAÊ¨Ñ‰Ωç()
         Application.ScreenUpdating = False
         Dim mainSh As Worksheet
         Set mainSh = ActiveSheet
@@ -13,7 +13,7 @@ Sub ß‰¥MRMAƒÊ¶Ï()
         For Each c In rg
                 For Each sh In ActiveWorkbook.Worksheets
                         sh.Activate
-                        If sh.name <> "§U©P±∆µ{" Then
+                        If sh.name <> "‰∏ãÂë®ÊéíÁ®ã" Then
                                 Set RMA = Cells.Find(What:=c, LookAt:=xlPart)
                                 If Not RMA Is Nothing Then
                                         temp = c.Row
@@ -21,7 +21,7 @@ Sub ß‰¥MRMAƒÊ¶Ï()
                                         Set firstRng = RMA
                                         Do
                                                 k = k + 1
-                                                str = str & "≠∂≠± : " & sh.name & Space(5) & "ƒÊ¶Ï: " & RMA.Address & vbCrLf
+                                                str = str & "È†ÅÈù¢ : " & sh.name & Space(5) & "Ê¨Ñ‰Ωç: "" & RMA.Address & vbCrLf
                                                 Set RMA = Cells.FindNext(RMA)
                                         Loop Until RMA.Address = firstRng.Address
                                 End If
