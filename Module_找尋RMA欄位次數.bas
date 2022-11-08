@@ -40,5 +40,5 @@ Sub 找尋RMA欄位()
                 k = 0
         Next c
         mainSh.Activate
-        Application.ScreenUpdating = False
+                Application.ScreenUpdating = True
 End Sub
