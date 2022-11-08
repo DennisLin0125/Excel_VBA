@@ -1,5 +1,5 @@
-Attribute VB_Name = "Module·j´MRMA"
-Sub ·j´MRMA()
+Attribute VB_Name = "Moduleæœå°‹RMA"
+Sub æœå°‹RMA()
 Application.ScreenUpdating = False
 Application.DisplayAlerts = False
 
@@ -14,7 +14,7 @@ Dim a As Range, b As Range
 
 If [A2] = "" Then Exit Sub
 
-Set sh = Workbooks("«İ­×¤ÀªR.xlsm").Worksheets("¸ê®Æ")
+Set sh = Workbooks("å¾…ä¿®åˆ†æ.xlsm").Worksheets("è³‡æ–™")
 
 Range("I3:I100") = ""
 
@@ -33,8 +33,8 @@ For j = 2 To UBound(arr)
         
         For i = 2021 To 2006 Step -1
         
-                tempWR = "P:\Service\RMA\WR\" & i & "\" & RMA & ".xls"
-                tempComplete = "P:\Service\RMA\Complete\" & i & "\" & RMA & ".xls"
+                tempWR = ""
+                tempComplete = ""
                 
                 WRAns = fs.FileExists(tempWR)
                 CompAns = fs.FileExists(tempComplete)
@@ -114,5 +114,5 @@ myTime = Time - myTime
 myMin = Minute(myTime)
 mySec = Second(myTime)
 
-MsgBox "·j´M§¹²¦" & Chr(10) & Chr(10) & "·j´M®É¶¡" & myMin & "¤À" & mySec & "¬í" & Chr(10) & Chr(10) & "¦@·j´M" & mum & "¦¸"
+MsgBox "æœå°‹å®Œç•¢" & Chr(10) & Chr(10) & "æœå°‹æ™‚é–“" & myMin & "åˆ†" & mySec & "ç§’" & Chr(10) & Chr(10) & "å…±æœå°‹" & mum & "æ¬¡"
 End Sub
