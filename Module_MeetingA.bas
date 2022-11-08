@@ -110,7 +110,7 @@ Sub meetingA()
         RPNumAddress = ""     '開啟維修台數
         RPNumAns = fs.FileExists(RPAddress)
         
-        CpleRateAddress = "x"     '開啟達成率
+        CpleRateAddress = ""     '開啟達成率
         CpleRateAns = fs.FileExists(RPAddress)
 '**************************************************************************************************************************************************************
         '偵測檔案存在
