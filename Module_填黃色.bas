@@ -1,5 +1,5 @@
-Attribute VB_Name = "Module¶ñ¶À¦â"
-Sub ¶ñ¶À¦â()
+Attribute VB_Name = "Moduleå¡«é»ƒè‰²"
+Sub å¡«é»ƒè‰²()
         Application.ScreenUpdating = False
         Application.DisplayAlerts = False
         
@@ -7,7 +7,7 @@ Sub ¶ñ¶À¦â()
         Set myRng = Workbooks("RMA by Dennis.xls").Worksheets("Dennis").Range("A1:A" & Range("G" & Rows.Count).End(xlUp).Row)
         
         Dim wb As Workbook
-        Set wb = Workbooks.Open("P:\Service\§Ş³N°Q½×±M°Ï\Engineer\2. Eason\RMA Status\¹w©w¦w±Æ¾÷¥x\RMA list.xlsx", UpdateLinks:=0)
+        Set wb = Workbooks.Open("", UpdateLinks:=0)
         
         wb.Activate
         Dim rng As Range
@@ -29,5 +29,5 @@ Sub ¶ñ¶À¦â()
         Application.ScreenUpdating = True
         Application.DisplayAlerts = True
         
-        MsgBox "§¹¦¨"
+        MsgBox "å®Œæˆ"
 End Sub
