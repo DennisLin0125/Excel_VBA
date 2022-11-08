@@ -1,18 +1,18 @@
 Attribute VB_Name = "ModuleMKS3LPhoto"
-Sub ÀË¬dMKS3L·Ó¤ù()
+Sub æª¢æŸ¥MKS3Lç…§ç‰‡()
         Application.ScreenUpdating = False
         Application.DisplayAlerts = False
         
         Dim wb As Workbook, sPath$
-        sPath = "P:\Service\§Ş³N°Q½×±M°Ï\Engineer\4. Jacky\MKS 3L.xlsx"
+        sPath = "x"
         Set wb = Workbooks.Open(sPath, UpdateLink = 0)
         
-        wb.Worksheets("Á`ªí").Activate
+        wb.Worksheets("ç¸½è¡¨").Activate
         
         oROW = Range("B2").End(xlDown).Row
         
         Dim rg As Range
-        Set rg = wb.Worksheets("Á`ªí").Range("B3:B" & oROW)
+        Set rg = wb.Worksheets("ç¸½è¡¨").Range("B3:B" & oROW)
         
        
         Dim sh As Worksheet
@@ -33,7 +33,7 @@ Sub ÀË¬dMKS3L·Ó¤ù()
                                         Set num = rg.Find(What:=RMA, LookAt:=xlWhole)
                                         
                                         If num Is Nothing Then
-                                                MsgBox "Á`ªí¸Ì¨S¦³ " & sh.name & " ªº " & RMA, vbCritical
+                                                MsgBox "ç¸½è¡¨è£¡æ²’æœ‰ " & sh.name & " çš„ " & RMA, vbCritical
                                                 Application.ScreenUpdating = True
                                                 Cells(3, i).Select
                                                 Set num = Nothing
@@ -49,7 +49,7 @@ Sub ÀË¬dMKS3L·Ó¤ù()
         Set rg = Nothing
         Set wb = Nothing
         
-        MsgBox "ÀÉ®×§¡¦s¦b", vbInformation
+        MsgBox "æª”æ¡ˆå‡å­˜åœ¨", vbInformation
         
         Application.ScreenUpdating = True
         Application.DisplayAlerts = True
