@@ -1,5 +1,5 @@
-Attribute VB_Name = "ModuleÀH·N´¡¤Jµù¸Ñ¹Ï¤ù"
-Sub ÀH·N´¡¤Jµù¸Ñ()
+Attribute VB_Name = "Moduleéš¨æ„æ’å…¥è¨»è§£åœ–ç‰‡"
+Sub æ’å…¥è¨»è§£åœ–ç‰‡()
         
         Application.ScreenUpdating = False
         
@@ -11,13 +11,13 @@ Sub ÀH·N´¡¤Jµù¸Ñ()
 
         With fd
                 .AllowMultiSelect = True
-                .InitialFileName = "D:\Users\Dlin\Desktop\·Ó¤ù"
+                .InitialFileName = ""
                 .Filters.Add "*.*", "*.*"
-                .Title = "½Ğ¿ï¾Ü·Ó¤ù"
+                .Title = "è«‹é¸æ“‡ç…§ç‰‡"
                 
                 Dim rng As Range
                 Dim sShape As Shape, Row%
-                MsgBox "½Ğ¿ï¾Ü¹Ï§Î"
+                MsgBox "è«‹é¸æ“‡åœ–å½¢"
                 Row = 2
                 If .Show = -1 Then
                         For Each sPath In .SelectedItems
