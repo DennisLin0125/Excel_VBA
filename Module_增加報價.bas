@@ -1,5 +1,5 @@
-Attribute VB_Name = "Module¼W¥[³ø»ù"
-Sub ¼W¥[³ø»ù()
+Attribute VB_Name = "Moduleå¢åŠ å ±åƒ¹"
+Sub å¢åŠ å ±åƒ¹()
     Application.ScreenUpdating = False
     
     Dim sPath, sFile As String
@@ -11,9 +11,8 @@ Sub ¼W¥[³ø»ù()
     Range("B46").Interior.Color = 65535
     Range("A33") = "1. Machine cleaning." & Chr(10) & "2. According the test proccedure tested --- pass."
     
-    Worksheets("¶i¥X¼t·Ó¤ù").Copy Before:=Sheets("Failure Photo")
-    Worksheets("¶i¥X¼t·Ó¤ù (2)").name = "Failure Photo (³ø»ù)"
-    'Range("C5") = "·l Ãa ³ø §i"
+    Worksheets("é€²å‡ºå» ç…§ç‰‡").Copy Before:=Sheets("Failure Photo")
+    Worksheets("é€²å‡ºå» ç…§ç‰‡ (2)").name = "Failure Photo (å ±åƒ¹)"
     
     [A17:E17] = ""
     
@@ -24,14 +23,14 @@ Sub ¼W¥[³ø»ù()
     Application.ScreenUpdating = False
     
    
-    MsgBox "½Ğ¤@¦¸¿ï§¹ºû­×·Ó¤ù"
+    MsgBox "è«‹ä¸€æ¬¡é¸å®Œç¶­ä¿®ç…§ç‰‡"
     
     
     Set fd = Application.FileDialog(msoFileDialogFilePicker)
     
     fd.AllowMultiSelect = True
     
-    fd.Title = "½Ğ¿ï¾Ü·Ó¤ù"
+    fd.Title = "è«‹é¸æ“‡ç…§ç‰‡"
     
     Row = 18
     
@@ -79,7 +78,6 @@ Sub ¼W¥[³ø»ù()
                     .name = "Tahoma"
                     .Size = 12
                 End With
-           ' Range("A" & Row + 20).Value = "Bus¹q®e·lÃa¡A»İ§ó´«·s«~¡A²§±`¬°390uF (¼Ğ·Ç¬°510¡Ó10% uF)"
             
             Row = Row + 21
             
@@ -139,8 +137,7 @@ Sub ¼W¥[³ø»ù()
                 With Selection.Font
                     .name = "Tahoma"
                     .Size = 12
-                End With
-            'Range("E" & Row + 20) = "Bus¹q®e·lÃa¡A»İ§ó´«·s«~¡A²§±`¬°390uF (¼Ğ·Ç¬°510¡Ó10% uF)"
+                End Wit
             
             Row = Row + 21
         Next
@@ -151,7 +148,7 @@ Sub ¼W¥[³ø»ù()
     
     Application.ScreenUpdating = True
     
-    MsgBox "³B²z§¹¦¨", vbInformation
+    MsgBox "è™•ç†å®Œæˆ", vbInformation
     
 End Sub
 
