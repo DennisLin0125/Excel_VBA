@@ -1,20 +1,20 @@
-Attribute VB_Name = "ModuleΩ∆ªs•DÆu"
-Sub Ω∆ªs•DÆu()
+Attribute VB_Name = "ModuleË§áË£Ω‰∏ªÂ∏≠"
+Sub Ë§áË£Ω‰∏ªÂ∏≠()
     Dim ChairmanRng As Range
-    Set ChairmanRng = Workbooks("RMA by Dennis.xls").Worksheets("•DÆu").Range("A2:A14")
+    Set ChairmanRng = Workbooks("RMA by Dennis.xls").Worksheets("‰∏ªÂ∏≠").Range("A2:A14")
     
     Dim searchRng As Range
-    Set searchRng = Workbooks("RMA by Dennis.xls").Worksheets("∑j¥M").Range("A7")
+    Set searchRng = Workbooks("RMA by Dennis.xls").Worksheets("ÊêúÂ∞ã").Range("A6")
     
     Dim R
     For Each R In ChairmanRng
         If R = searchRng Then
             Dim sh As Worksheet
-            Set sh = Workbooks("RMA by Dennis.xls").Worksheets("•DÆu")
+            Set sh = Workbooks("RMA by Dennis.xls").Worksheets("‰∏ªÂ∏≠")
                 Dim ChairmanRngROW%
                 ChairmanRngROW = sh.Range(R.Address).Row
-                sh.Range("H" & ChairmanRngROW) = Workbooks("RMA by Dennis.xls").Worksheets("∑j¥M").Range("G8") '§uµ{Æv
-                sh.Range("J" & ChairmanRngROW) = Workbooks("RMA by Dennis.xls").Worksheets("∑j¥M").Range("F8") '∞e¶^§È¥¡
+                sh.Range("H" & ChairmanRngROW) = Workbooks("RMA by Dennis.xls").Worksheets("ÊêúÂ∞ã").Range("G8") 'Â∑•Á®ãÂ∏´
+                sh.Range("J" & ChairmanRngROW) = Workbooks("RMA by Dennis.xls").Worksheets("ÊêúÂ∞ã").Range("F8") 'ÈÄÅÂõûÊó•Êúü
                 Exit For
         End If
     Next
@@ -22,5 +22,5 @@ Sub Ω∆ªs•DÆu()
     Set searchRng = Nothing
     Set sh = Nothing
     
-    MsgBox "Ω∆ªsßπ¶®"
+    MsgBox "Ë§áË£ΩÂÆåÊàê"
 End Sub
