@@ -4,12 +4,12 @@ Sub AdvancedFilter()
         Application.DisplayAlerts = False
         
         Dim rg As Range
-        Set rg = Workbooks("«İ­×¤ÀªR.xlsm").Worksheets("·j´M¾÷ºØ").[A12].CurrentRegion
+        Set rg = Workbooks("å¾…ä¿®åˆ†æ.xlsm").Worksheets("æœå°‹æ©Ÿç¨®").[A12].CurrentRegion
         rg.Offset(1).ClearContents
         
         
         Dim wb As Workbook, sPath$
-        sPath = "P:\Service\RMA\Main\Kaitek RMA " & [B7] & " main.xls"
+        sPath = ""
         
         Set wb = Workbooks.Open(sPath, UpdateLinks = 0)
         
@@ -28,8 +28,8 @@ Sub AdvancedFilter()
                 .AutoFilter.Sort.Apply
        End With
        
-        Set rgCriteria = Workbooks("«İ­×¤ÀªR.xlsm").Worksheets("·j´M¾÷ºØ").[A1].CurrentRegion
-        Set rgOutput = Workbooks("«İ­×¤ÀªR.xlsm").Worksheets("·j´M¾÷ºØ").[A12].CurrentRegion
+        Set rgCriteria = Workbooks("å¾…ä¿®åˆ†æ.xlsm").Worksheets("æœå°‹æ©Ÿç¨®").[A1].CurrentRegion
+        Set rgOutput = Workbooks("å¾…ä¿®åˆ†æ.xlsm").Worksheets("æœå°‹æ©Ÿç¨®").[A12].CurrentRegion
         
         rgData.AdvancedFilter xlFilterCopy, rgCriteria, rgOutput
         
