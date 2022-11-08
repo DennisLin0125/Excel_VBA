@@ -1,15 +1,6 @@
-Attribute VB_Name = "Module±H«H"
-Sub ±H«H()
-        strBody = "<B>Hi Jack</B><br><br>" & _
-              "<B>¤w§¹¦¨</B>" & _
-              "<H3><B>All the best</B></H3>" & _
-              "<B>Dennis Lin</B><br>" & _
-              "<B>**********************************</B><br>" & _
-              "<B>Kaitek Coproration</B><br>" & _
-              "<B>14F., No. 659, Bannan Rd, Zhonghe Dist.,</B><br>" & _
-              "<B>New Taipei City 23557, Taiwan R.O.C.</B><br>" & _
-              "<B>TEL: 02-3234-8222 #251</B><br>" & _
-              "<B>**********************************</B>"
+Attribute VB_Name = "Moduleå¯„ä¿¡"
+Sub å¯„ä¿¡()
+      strBody = ""
       Dim outApp As Object
       Set outApp = CreateObject("Outlook.Application")
       
@@ -17,21 +8,20 @@ Sub ±H«H()
       Set outMail = outApp.CreateItem(0)
       
       With outMail
-            '.To = "jack.chen@kaitek.com.tw"
-            .To = "tom.lin@kaitek.com.tw"
+            .To = ""
             .CC = ""
             .BCC = ""
-            .Subject = "2¼t»â®Æ³æ"
+            .Subject = "2å» é ˜æ–™å–®"
             .HtmlBody = strBody
-            '.Body = "½ĞÀ°¦£»â®Æ ÁÂÁÂ"
-            .Attachments.Add "P:\Service\Parts data\»â®Æ²M³æ_2021_2¼t.xls"
+            '.Body = "è«‹å¹«å¿™é ˜æ–™ è¬è¬"
+            .Attachments.Add ""
             
 '            Dim fd As FileDialog
-'            ans = MsgBox("¬O§_­nªş¥[W3M¤ÀªR³ø§i?", vbYesNo)
+'            ans = MsgBox("æ˜¯å¦è¦é™„åŠ W3Måˆ†æå ±å‘Š?", vbYesNo)
 '            If ans = vbYes Then
 '                  Set fd = Application.FileDialog(msoFileDialogFilePicker)
-'                  fd.Title = "½Ğ¿ï¾Ü­nªş¥[ªºW3MÀÉ®×"
-'                  MsgBox "½Ğ¿ï¾Ü­nªş¥[ªºW3MÀÉ®×"
+'                  fd.Title = "è«‹é¸æ“‡è¦é™„åŠ çš„W3Mæª”æ¡ˆ"
+'                  MsgBox "è«‹é¸æ“‡è¦é™„åŠ çš„W3Mæª”æ¡ˆ"
 '                  If fd.Show = -1 Then
 '                        .Attachments.Add fd.SelectedItems(1)
 '
@@ -40,19 +30,19 @@ Sub ±H«H()
 '                        myTitle = Mid(temp, InStrRev(temp, "\") + 1)
 '
 '                        .Subject = myTitle
-'                        .Body = "ªş¥ó¬°    " & myTitle & "   «O©T¤ÀªR³ø§i"
+'                        .Body = "é™„ä»¶ç‚º    " & myTitle & "   ä¿å›ºåˆ†æå ±å‘Š"
 '                  End If
 '            Else
 '                  Set fd = Application.FileDialog(msoFileDialogFilePicker)
-'                  fd.Title = "½Ğ¿ï¾Üªş¥[ÀÉ®×"
-'                  MsgBox "½Ğ¿ï¾Üªş¥[ÀÉ®×"
+'                  fd.Title = "è«‹é¸æ“‡é™„åŠ æª”æ¡ˆ"
+'                  MsgBox "è«‹é¸æ“‡é™„åŠ æª”æ¡ˆ"
 '                  If fd.Show = -1 Then
 '                        .Attachments.Add fd.SelectedItems(1)
 '                  End If
                   
 '                  Dim main1$, main2$
-'                  main1 = InputBox("½Ğ¿é¤J¥D¦®")
-'                  main2 = InputBox("½Ğ¿é¤J¤º¤å")
+'                  main1 = InputBox("è«‹è¼¸å…¥ä¸»æ—¨")
+'                  main2 = InputBox("è«‹è¼¸å…¥å…§æ–‡")
 '                  .Subject = main1
 '                  .Body = main2
                   
@@ -65,7 +55,7 @@ Sub ±H«H()
 '      Set outMail = Nothing
 '
 '      Dim wbtest As Workbook
-'      fath = "P:\Service\Parts data\»â®Æ²M³æ_2021_2¼t.xls"
+'      fath = ""
 '      Set wbtest = Workbooks.Open(fath, UpdateLinks:=0)
 '      wbtest.Activate
 '
@@ -80,6 +70,6 @@ Sub ±H«H()
 '
 '      Range("A2:N" & temp) = ""
 '      wbtest.Close True
-'      MsgBox "§¹¦¨,  Tom ªº¹q¸Ü 206"
+'      MsgBox "å®Œæˆ,  Tom çš„é›»è©± 206"
 End Sub
 
