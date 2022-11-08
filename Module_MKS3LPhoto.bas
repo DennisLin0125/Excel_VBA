@@ -4,7 +4,7 @@ Sub 檢查MKS3L照片()
         Application.DisplayAlerts = False
         
         Dim wb As Workbook, sPath$
-        sPath = "x"
+        sPath = ""
         Set wb = Workbooks.Open(sPath, UpdateLink = 0)
         
         wb.Worksheets("總表").Activate
