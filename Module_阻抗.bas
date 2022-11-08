@@ -1,12 +1,12 @@
-Attribute VB_Name = "Module聯電阻抗"
-Sub 聯電阻抗()
+Attribute VB_Name = "Module阻抗"
+Sub 阻抗()
         
         Application.ScreenUpdating = False
         Application.DisplayAlerts = False
 
         
         Dim snDennis As Worksheet
-        Set snDennis = Workbooks("待修分析.xlsm").Worksheets("聯電阻抗")
+        Set snDennis = Workbooks("待修分析.xlsm").Worksheets("阻抗")
      
         If [B5] <> "" Then
                 Dim rg As Range
