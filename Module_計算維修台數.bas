@@ -1,4 +1,4 @@
-Attribute VB_Name = "Module­pºâºû­×¥x¼Æ"
+Attribute VB_Name = "Moduleè¨ˆç®—ç¶­ä¿®å°æ•¸"
 Private Function countW3M(ByRef arr As Variant, ByVal engineer As String) As Integer
         Dim i%, times%
         times = 0
@@ -20,7 +20,7 @@ Private Function countManchine(ByRef arr As Variant, ByVal engineer As String) A
         countManchine = times
 End Function
 
-Sub ¥ş³¡()
+Sub å…¨éƒ¨()
         Application.ScreenUpdating = False
         Application.DisplayAlerts = False
         
@@ -32,8 +32,8 @@ Sub ¥ş³¡()
         
         Dim Year%
         
-        Year = Worksheets("¤uµ{®v«O©T").Cells(4, "E")
-        Set wb = Workbooks.Open(Filename:="P:\Service\RMA\Main\Kaitek RMA " & Year & " main.xls")
+        Year = Worksheets("å·¥ç¨‹å¸«ä¿å›º").Cells(4, "E")
+        Set wb = Workbooks.Open(Filename:="")
         
         With wb.Worksheets("Master")
                 Dim arr
@@ -58,7 +58,7 @@ Sub ¥ş³¡()
         
         wb.Close False
         
-        With Workbooks("«İ­×¤ÀªR.xlsm").Worksheets("¤uµ{®v«O©T")
+        With Workbooks("å¾…ä¿®åˆ†æ.xlsm").Worksheets("å·¥ç¨‹å¸«ä¿å›º")
                 .[C10].Resize(UBound(mat, 1) + 1, UBound(mat, 2) + 1) = mat
                 .Activate
         End With
@@ -71,7 +71,7 @@ Sub ¥ş³¡()
         myTime = Time - myTime
         myMin = Minute(myTime)
         mySec = Second(myTime)
-        MsgBox "·j´M§¹¦¨" & Chr(10) & Chr(10) & "·j´M®É¶¡" & myMin & "¤À" & mySec & "¬í"
+        MsgBox "æœå°‹å®Œæˆ" & Chr(10) & Chr(10) & "æœå°‹æ™‚é–“" & myMin & "åˆ†" & mySec & "ç§’"
     
 End Sub
 
