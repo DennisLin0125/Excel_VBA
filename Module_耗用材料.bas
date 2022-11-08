@@ -1,12 +1,12 @@
-Attribute VB_Name = "Module¯Ó¥Î§÷®Æ"
-Sub ¯Ó¥Î§÷®Æ()
-Attribute ¯Ó¥Î§÷®Æ.VB_ProcData.VB_Invoke_Func = "m\n14"
+Attribute VB_Name = "Moduleè€—ç”¨ææ–™"
+Sub è€—ç”¨ææ–™()
+Attribute è€—ç”¨ææ–™.VB_ProcData.VB_Invoke_Func = "m\n14"
 
-        Application.ScreenUpdating = False 'Ãö³¬§ó·sµe­±
+        Application.ScreenUpdating = False 'é—œé–‰æ›´æ–°ç•«é¢
         Application.DisplayAlerts = False
         
         If ActiveSheet.name <> "RMA" Then
-                MsgBox "½Ğ¨ìRMA­¶­±°õ¦æ", vbCritical
+                MsgBox "è«‹åˆ°RMAé é¢åŸ·è¡Œ", vbCritical
                 Exit Sub
         End If
         
@@ -33,7 +33,7 @@ Attribute ¯Ó¥Î§÷®Æ.VB_ProcData.VB_Invoke_Func = "m\n14"
         Set MainUser = Mainwb.Worksheets("Use parts")
         
         Dim wb As Workbook
-        Set wb = Workbooks.Open("P:\Service\Service Bulletin\Parts Description.xlsx")
+        Set wb = Workbooks.Open("")
         With wb
                 Dim myTempParts
                 myTempParts = .Worksheets("part description").Cells(1, 1).CurrentRegion
@@ -48,31 +48,31 @@ Attribute ¯Ó¥Î§÷®Æ.VB_ProcData.VB_Invoke_Func = "m\n14"
         Myname = ActiveWorkbook.name
         
         If Range("B42").Value = "0" Then
-                MsgBox ("½Ğ¿é¤J¤u®É"), vbCritical
+                MsgBox ("è«‹è¼¸å…¥å·¥æ™‚"), vbCritical
                 Exit Sub
         ElseIf Range("F11").Value = "" Then
-                MsgBox ("½Ğ¿é¤J¤uµ{®v¦W¦r"), vbCritical
+                MsgBox ("è«‹è¼¸å…¥å·¥ç¨‹å¸«åå­—"), vbCritical
                 Exit Sub
         ElseIf Range("H12").Value = "" Then
-                MsgBox ("½Ğ¿é¤J¬G»Ù½T»{ Yes ©Î No"), vbCritical
+                MsgBox ("è«‹è¼¸å…¥æ•…éšœç¢ºèª Yes æˆ– No"), vbCritical
                 Exit Sub
         ElseIf Range("B41").Value = "" Then
-                MsgBox ("½Ğ¿é¤J¼ö¾÷®É¶¡"), vbCritical
+                MsgBox ("è«‹è¼¸å…¥ç†±æ©Ÿæ™‚é–“"), vbCritical
                 Exit Sub
         ElseIf MainUser.[B1] = "" Then
-                MsgBox ("½Ğ¿é¤JUse parts ºû­×¤u®É"), vbCritical
+                MsgBox ("è«‹è¼¸å…¥Use parts ç¶­ä¿®å·¥æ™‚"), vbCritical
                 MainUser.Select
                 [B1].Select
                 Exit Sub
         ElseIf Range("F41").Value = 3 And Range("F42").Value <> "" Then
-                MsgBox ("¦¹¥x¬°«O©T,¤u®É¼g¿ù¦ì¸m"), vbCritical
+                MsgBox ("æ­¤å°ç‚ºä¿å›º,å·¥æ™‚å¯«éŒ¯ä½ç½®"), vbCritical
                 Exit Sub
         End If
         
         If W3M = 3 Then
-                a = MsgBox("¦¹¥x¬°«O©T,½Ğ½T»{¬O§_§¹¦¨W3M¤ÀªR³ø§i", vbYesNo)
+                a = MsgBox("æ­¤å°ç‚ºä¿å›º,è«‹ç¢ºèªæ˜¯å¦å®ŒæˆW3Måˆ†æå ±å‘Š", vbYesNo)
                 If a = vbYes Then
-                        a = MsgBox("¬O§_¬°NPO??", vbYesNo)
+                        a = MsgBox("æ˜¯å¦ç‚ºNPO??", vbYesNo)
                                 If a = vbYes Then
                                         Range("D42").Value = 2
                                         Range("A19").Value = "1.No problem observed."
@@ -81,7 +81,7 @@ Attribute ¯Ó¥Î§÷®Æ.VB_ProcData.VB_Invoke_Func = "m\n14"
                                         Range("H41").Value = 4
                                 End If
                 Else
-                        MsgBox ("½Ğ§¹¦¨¤ÀªR³ø§i")
+                        MsgBox ("è«‹å®Œæˆåˆ†æå ±å‘Š")
                         Exit Sub
                 End If
         End If
@@ -91,19 +91,19 @@ Attribute ¯Ó¥Î§÷®Æ.VB_ProcData.VB_Invoke_Func = "m\n14"
         
         Dim i As Integer, ans As Boolean, dataSize As Double, x As Double
         For i = 2022 To 2006 Step -1
-                ans = fs.FileExists("P:\Service\RMA\WR\" & i & "\" & Myname)
+                ans = fs.FileExists("")
                 If ans Then
-                        dataSize = (VBA.FileLen("P:\Service\RMA\WR\" & i & "\" & Myname))
+                        dataSize = (VBA.FileLen(""))
                         dataSize = dataSize / 1024 / 1024
                         x = Math.Round(dataSize, 2)
                         If x > 2.5 Then
-                                MsgBox "ÀÉ®×¤j¤p :  " & x & " MB" & Chr(10) & Chr(10) & "ÀÉ®×¶W¹L2.5¢Û¢Ğ¡A½ĞÀ£ÁY©Î´î¤Ö·Ó¤ù¡I¡I", vbCritical
+                                MsgBox "æª”æ¡ˆå¤§å° :  " & x & " MB" & Chr(10) & Chr(10) & "æª”æ¡ˆè¶…é2.5ï¼­ï¼¢ï¼Œè«‹å£“ç¸®æˆ–æ¸›å°‘ç…§ç‰‡ï¼ï¼", vbCritical
                                 Exit Sub
                         End If
                         Exit For
                 End If
                 If i = 2006 Then
-                        MsgBox Range("F7") & "ÀÉ®×¤£¦s¦b"
+                        MsgBox Range("F7") & "æª”æ¡ˆä¸å­˜åœ¨"
                         Exit Sub
                 End If
         Next
@@ -135,7 +135,7 @@ Attribute ¯Ó¥Î§÷®Æ.VB_ProcData.VB_Invoke_Func = "m\n14"
 '                                myRow = Parts.Row
 '                                mainSh.Range("C" & tempRow) = wb.Worksheets("part description").Range("B" & myRow)
                         Else
-                                MsgBox "RMA­¶  ®Æ¸¹ :  " & c & "  ²§±`", vbCritical
+                                MsgBox "RMAé   æ–™è™Ÿ :  " & c & "  ç•°å¸¸", vbCritical
                                 Exit Sub
                         End If
                 Next
@@ -163,7 +163,7 @@ Attribute ¯Ó¥Î§÷®Æ.VB_ProcData.VB_Invoke_Func = "m\n14"
 '                                MainUser.Range("A" & tempRow).Interior.Color = xlNone
 '                                MainUser.Range("D" & tempRow) = ""
                         Else
-                                MsgBox "Use parts­¶ ®Æ¸¹ :  " & c & "  ²§±`", vbCritical
+                                MsgBox "Use partsé  æ–™è™Ÿ :  " & c & "  ç•°å¸¸", vbCritical
                                 Exit Sub
                         End If
                 Next
@@ -184,6 +184,6 @@ Attribute ¯Ó¥Î§÷®Æ.VB_ProcData.VB_Invoke_Func = "m\n14"
         Application.ScreenUpdating = True
         Application.DisplayAlerts = True
         
-        MsgBox "ÀÉ®×¤j¤p :  " & x & " MB" & Chr(10) & Chr(10) & "®Æ¸¹ ¥¿±`", vbInformation
+        MsgBox "æª”æ¡ˆå¤§å° :  " & x & " MB" & Chr(10) & Chr(10) & "æ–™è™Ÿ æ­£å¸¸", vbInformation
         
 End Sub
