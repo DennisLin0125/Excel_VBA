@@ -1,4 +1,4 @@
-Attribute VB_Name = "Module°}¦C¤ÀªR"
+Attribute VB_Name = "Moduleé™£åˆ—åˆ†æ"
 Private Function KTcounter(ByVal keyword As String, ByVal colum As Integer, ByVal index As Integer, ByVal colum2 As Integer) As Integer
 
         If [a2] = "" Then
@@ -45,7 +45,7 @@ Private Function find(ByVal keyword As String, ByVal col As Integer, temp As Int
         
         nRow = Cells(Rows.Count, 1).End(xlUp).Row
         
-        'temp­pºâ¬O§_¦³RPS ³ø»ù©Î«İ®Æ    1¥¿±`   0³ø»ù©Î«İ®Æ
+        'tempè¨ˆç®—æ˜¯å¦æœ‰RPS å ±åƒ¹æˆ–å¾…æ–™    1æ­£å¸¸   0å ±åƒ¹æˆ–å¾…æ–™
         If temp = 1 Then
                 With Range(Cells(sRow, col), Cells(nRow, col))
                         Set machine = .find(What:=keyword, After:=Cells(sRow, col), Lookat:=xlPart)
@@ -79,7 +79,7 @@ Private Function find(ByVal keyword As String, ByVal col As Integer, temp As Int
         
 End Function
 
-Sub °}¦C()
+Sub é™£åˆ—()
         Application.ScreenUpdating = False
         Application.DisplayAlerts = False
         Application.Calculation = xlCalculationManual
@@ -98,7 +98,7 @@ Sub °}¦C()
         
         If ans = 0 Then
                 Dim fpath$
-                fpath = "P:\Service\§Ş³N°Q½×±M°Ï\Engineer\1. Jack\RMA by Jack.xlsx"
+                fpath = ""
                 Set wb = Workbooks.Open(fpath, UpdateLink = 0)
         End If
         
@@ -116,9 +116,9 @@ Sub °}¦C()
                 Worksheets(arrJackA(i)).Activate
                 matA(i, 0) = engArrA(i)
                 matA(i, 1) = RPcounter
-                matA(i, 2) = find("WR", 7, 1)   '1¬°¥¿±`WR
-                matA(i, 3) = find("WFC", 7, 1)  '1¬°¥¿±`WR
-                matA(i, 4) = find("WFP", 7, 1)  '1¬°¥¿±`WR
+                matA(i, 2) = find("WR", 7, 1)   '1ç‚ºæ­£å¸¸WR
+                matA(i, 3) = find("WFC", 7, 1)  '1ç‚ºæ­£å¸¸WR
+                matA(i, 4) = find("WFP", 7, 1)  '1ç‚ºæ­£å¸¸WR
                 matA(i, 5) = KTcounter("KAITEK", 2, 1, 7)
         Next
 '***************************************************************************************************
@@ -135,9 +135,9 @@ Sub °}¦C()
                 Worksheets(arrJackB(i)).Activate
                 matB(i, 0) = engArrB(i)
                 matB(i, 1) = RPcounter
-                matB(i, 2) = find("WR", 7, 1) '1¬°¥¿±`WR
-                matB(i, 3) = find("WFC", 7, 1) '1¬°¥¿±`WR
-                matB(i, 4) = find("WFP", 7, 1) '1¬°¥¿±`WR
+                matB(i, 2) = find("WR", 7, 1) '1ç‚ºæ­£å¸¸WR
+                matB(i, 3) = find("WFC", 7, 1) '1ç‚ºæ­£å¸¸WR
+                matB(i, 4) = find("WFP", 7, 1) '1ç‚ºæ­£å¸¸WR
                 matB(i, 5) = KTcounter("KAITEK", 2, 1, 7)
         Next
 '************************************************************************************************************
@@ -157,7 +157,7 @@ Sub °}¦C()
         Next
         
 '************************************************************************************************************
-        With Workbooks("«İ­×¤ÀªR.xlsm").Worksheets("«İ­×")
+        With Workbooks("å¾…ä¿®åˆ†æ.xlsm").Worksheets("å¾…ä¿®")
                 .[E3].Resize(UBound(matA, 1) + 1, 6) = matA
                 .[L3].Resize(UBound(matB, 1) + 1, 6) = matB
                 .[S4].Resize(UBound(matWR) + 1, 2) = matWR
@@ -170,6 +170,6 @@ Sub °}¦C()
     
         t2 = FormatDateTime(Time, vbGeneralDate)
         
-        MsgBox "³B²z§¹¦¨" & Chr(10) & Chr(10) & "¬d¸ß®É¶¡" & DateDiff("s", t1, t2) & "¬í¡C"
+        MsgBox "è™•ç†å®Œæˆ" & Chr(10) & Chr(10) & "æŸ¥è©¢æ™‚é–“" & DateDiff("s", t1, t2) & "ç§’ã€‚"
 End Sub
 
