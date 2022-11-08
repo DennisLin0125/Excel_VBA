@@ -1,6 +1,6 @@
 Attribute VB_Name = "ModulemeetingA"
 Option Explicit
-Function ≠p∫‚∫˚≠◊W3M() As Integer
+Function Ë®àÁÆóÁ∂≠‰øÆW3M() As Integer
         Dim W3MRP%, strLen$, i%
         W3MRP = 0
         If [A2] <> "" Then
@@ -14,10 +14,10 @@ Function ≠p∫‚∫˚≠◊W3M() As Integer
                 W3MRP = 0
         End If
             
-        ≠p∫‚∫˚≠◊W3M = W3MRP
+        Ë®àÁÆóÁ∂≠‰øÆW3M = W3MRP
     
 End Function
-Function ≠p∫‚W3M() As Integer
+Function Ë®àÁÆóW3M() As Integer
 
         Dim W3MTime%, LF%, i%, strLen$
         If Range("H2").Value = "" Then
@@ -38,7 +38,7 @@ Function ≠p∫‚W3M() As Integer
         End If
          
         If W3MTime > 0 Then
-                MsgBox "ßA¶≥ " & W3MTime & " •x´O©T"
+                MsgBox "‰Ω†Êúâ " & W3MTime & " Âè∞‰øùÂõ∫"
                 Dim sPath$
                 sPath = "D:\Users\Dlin\Desktop\W3M.xlsx"
                 Dim wb2 As Workbook
@@ -54,10 +54,10 @@ Function ≠p∫‚W3M() As Integer
                 End If
                 wb2.Close True
         Else
-                MsgBox "Æ•≥ﬂ®S¶≥´O©T,Ω–¶n¶n´O´˘ ^^"
+                MsgBox "ÊÅ≠ÂñúÊ≤íÊúâ‰øùÂõ∫,Ë´ãÂ•ΩÂ•Ω‰øùÊåÅ ^^"
         End If
             
-        ≠p∫‚W3M = W3MTime
+        Ë®àÁÆóW3M = W3MTime
         
 End Function
 Sub meetingA()
@@ -95,46 +95,46 @@ Sub meetingA()
     
         myTime2 = Format(Date + 1, "yyyymmdd")
         
-        myYear = Mid(myTime2, 1, 4) '®˙¶~§¿
+        myYear = Mid(myTime2, 1, 4) 'ÂèñÂπ¥ÂàÜ
         
-        myMonth = Mid(myTime2, 5, 2) '®˙§Î•˜
+        myMonth = Mid(myTime2, 5, 2) 'ÂèñÊúà‰ªΩ
         
-        myDay = Mid(myTime2, 7, 2) '®˙§È¥¡
+        myDay = Mid(myTime2, 7, 2) 'ÂèñÊó•Êúü
     
-        MeetAddress = "P:\Service\Service meeting\" & myYear & "\" & myTime2 & "\" & "RMA Weekly Status" & myTime2 & ".xls"  '∂}±“Weekly
+        MeetAddress = ""  'ÈñãÂïüWeekly
         meetAns = fs.FileExists(MeetAddress)
         
-        RPAddress = "P:\Service\Service meeting\" & myYear & "\" & myTime2 & "\" & "Utilization" & myTime2 & ".xls"     '∂}±“§uÆ…
+        RPAddress = ""     'ÈñãÂïüÂ∑•ÊôÇ
         RPAns = fs.FileExists(RPAddress)
         
-        RPNumAddress = "P:\Service\Service meeting\" & myYear & "\" & myTime2 & "\" & "∫˚≠◊•xº∆" & myTime2 & ".xls"     '∂}±“∫˚≠◊•xº∆
+        RPNumAddress = ""     'ÈñãÂïüÁ∂≠‰øÆÂè∞Êï∏
         RPNumAns = fs.FileExists(RPAddress)
         
-        CpleRateAddress = "P:\Service\Service meeting\" & myYear & "\" & myTime2 & "\" & myYear & "." & myMonth & "." & myDay & " πF¶®≤v.xlsx"     '∂}±“πF¶®≤v
+        CpleRateAddress = "x"     'ÈñãÂïüÈÅîÊàêÁéá
         CpleRateAns = fs.FileExists(RPAddress)
 '**************************************************************************************************************************************************************
-        '∞ª¥˙¿…Æ◊¶s¶b
+        'ÂÅµÊ∏¨Ê™îÊ°àÂ≠òÂú®
         If Not meetAns Then
-                MsgBox "Weekly¿…Æ◊§£¶s¶b"
+                MsgBox "WeeklyÊ™îÊ°à‰∏çÂ≠òÂú®"
                 Exit Sub
         ElseIf Not RPAns Then
-                MsgBox "§uÆ…¿…Æ◊§£¶s¶b"
+                MsgBox "Â∑•ÊôÇÊ™îÊ°à‰∏çÂ≠òÂú®"
                 Exit Sub
         ElseIf Not RPNumAns Then
-                MsgBox "∫˚≠◊•xº∆¿…Æ◊§£¶s¶b"
+                MsgBox "Á∂≠‰øÆÂè∞Êï∏Ê™îÊ°à‰∏çÂ≠òÂú®"
                 Exit Sub
         ElseIf Not CpleRateAns Then
-                MsgBox "πF¶®≤v¿…Æ◊§£¶s¶b"
+                MsgBox "ÈÅîÊàêÁéáÊ™îÊ°à‰∏çÂ≠òÂú®"
                 Exit Sub
         End If
         
 '*************************************************************************************************************************************************
-        '∞ª¥˙∞ﬂ≈™
+        'ÂÅµÊ∏¨ÂîØËÆÄ
         Dim wbMeet As Workbook, UpdateLinks%
         Set wbMeet = Workbooks.Open(MeetAddress, UpdateLinks:=0)
         If wbMeet.ReadOnly Then
                 wbMeet.Close False
-                MsgBox "Ω–™`∑N, Weekly•ÿ´e¨∞∞ﬂ≈™"
+                MsgBox "Ë´ãÊ≥®ÊÑè, WeeklyÁõÆÂâçÁÇ∫ÂîØËÆÄ"
                 Exit Sub
         End If
                 
@@ -143,7 +143,7 @@ Sub meetingA()
         If wbRP.ReadOnly Then
                 wbMeet.Close False
                 wbRP.Close False
-                MsgBox "Ω–™`∑N, §uÆ…•ÿ´e¨∞∞ﬂ≈™"
+                MsgBox "Ë´ãÊ≥®ÊÑè, Â∑•ÊôÇÁõÆÂâçÁÇ∫ÂîØËÆÄ"
                 Exit Sub
         End If
 
@@ -153,7 +153,7 @@ Sub meetingA()
                 wbMeet.Close False
                 wbRP.Close False
                 wbRPNum.Close False
-                MsgBox "Ω–™`∑N, ∫˚≠◊•xº∆•ÿ´e¨∞∞ﬂ≈™"
+                MsgBox "Ë´ãÊ≥®ÊÑè, Á∂≠‰øÆÂè∞Êï∏ÁõÆÂâçÁÇ∫ÂîØËÆÄ"
                 Exit Sub
         End If
 
@@ -164,14 +164,14 @@ Sub meetingA()
                 wbRP.Close False
                 wbRPNum.Close False
                 wbCpleRate.Close False
-                MsgBox "Ω–™`∑N, πF¶®≤v•ÿ´e¨∞∞ﬂ≈™"
+                MsgBox "Ë´ãÊ≥®ÊÑè, ÈÅîÊàêÁéáÁõÆÂâçÁÇ∫ÂîØËÆÄ"
                 Exit Sub
         End If
 '*****************************************************************************************************************
-        '≥B≤zπF¶®≤v
+        'ËôïÁêÜÈÅîÊàêÁéá
         Application.ScreenUpdating = True
         
-        wbCpleRate.Worksheets("πF¶®≤v").Select
+        wbCpleRate.Worksheets("ÈÅîÊàêÁéá").Select
         Dim temp%, LF3, strLen$, k%
         Dim workTime, myTemp
         temp = 0
@@ -181,49 +181,29 @@ Sub meetingA()
                 If InStr(strLen, "Dennis") > 0 Then
                         k = (Range("A" & i).End(xlToRight).Column) + 1
                         Cells(i, k).Select
-                        workTime = InputBox("Ω–øÈ§JDennis∏ÍÆ∆", "øÈ§J")
+                        workTime = InputBox("Ë´ãËº∏ÂÖ•DennisË≥áÊñô", "Ëº∏ÂÖ•")
                         Cells(i, k) = workTime
                          If temp = 0 Then
                                 myTemp = workTime
                                 temp = temp + 1
                          End If
-                        
-'                ElseIf InStr(strLen, "James") > 0 Then
-'                        Range("A" & i).End(xlToRight).Select
-'                        Cells(i, ActiveCell.Column + 1).Select
-'                        workTime = InputBox("Ω–øÈ§JJames∏ÍÆ∆", "øÈ§J")
-'                        Cells(i, ActiveCell.Column) = workTime
                 End If
         Next
-        
-'        Worksheets("∑s´~∂}µo").Select
-'
-'        For i = 260 To 1000
-'                If Range("A" & i) = Date - 6 Then
-'                        Range("A" & i).Select
-'                        Range(Selection, Selection.End(xlDown)).Copy
-'                        Range("A" & i + 7).PasteSpecial xlPasteAll
-'                        Range("A" & i + 7) = Date
-'                        Application.CutCopyMode = False
-'                        Range("A" & i + 7).Select
-'                        Exit For
-'                End If
-'        Next
 '*****************************************************************************************************************
-        '≥B≤zWeekly
+        'ËôïÁêÜWeekly
         wbMeet.Activate
         wbMeet.Worksheets("Dennis").Delete
         Workbooks("RMA by Dennis.xls").Worksheets("Meeting").Copy After:=wbMeet.Worksheets("Jay")
         Worksheets("Meeting").name = "Dennis"
         
         Dim W3MRP%
-        W3MRP = ≠p∫‚∫˚≠◊W3M
+        W3MRP = Ë®àÁÆóÁ∂≠‰øÆW3M
         
         Workbooks("RMA by Dennis.xls").Activate
         
         Application.ScreenUpdating = False
 
-        machine = InputBox("Ω–øÈ§J§U©Pπw±∆•xº∆", "∂}±“")
+        machine = InputBox("Ë´ãËº∏ÂÖ•‰∏ãÂë®È†êÊéíÂè∞Êï∏", "ÈñãÂïü")
         
         wbMeet.Worksheets("This Week").Activate
         
@@ -231,25 +211,25 @@ Sub meetingA()
         LF = Range("A5").End(xlDown).Row
         Set nameRng = Range("A5:A" & LF).Find(What:="Dennis Lin", LookAt:=xlWhole)
         
-        Range("D" & nameRng.Row) = Range("C" & nameRng.Row) 'Ω∆ªs§U©P•xº∆
-        Range("C" & nameRng.Row) = machine      '¶w±∆•xº∆
-        Range("G" & nameRng.Row) = RP '•ª©P∫˚≠◊
-        Range("H" & nameRng.Row) = oWR - oKT '´›≠◊
+        Range("D" & nameRng.Row) = Range("C" & nameRng.Row) 'Ë§áË£Ω‰∏ãÂë®Âè∞Êï∏
+        Range("C" & nameRng.Row) = machine      'ÂÆâÊéíÂè∞Êï∏
+        Range("G" & nameRng.Row) = RP 'Êú¨Âë®Á∂≠‰øÆ
+        Range("H" & nameRng.Row) = oWR - oKT 'ÂæÖ‰øÆ
       
         Range("I" & nameRng.Row) = oWFC 'WFC
         Range("J" & nameRng.Row) = oWFP 'WFP
-        Range("N" & nameRng.Row) = Range("N" & nameRng.Row) + Range("G" & nameRng.Row) '¡`∫˚≠◊•xº∆
-        Range("Q" & nameRng.Row) = W3MRP '≠◊§F¶h§÷W3M
-        Range("K" & nameRng.Row) = oKT '≥∆´~
+        Range("N" & nameRng.Row) = Range("N" & nameRng.Row) + Range("G" & nameRng.Row) 'Á∏ΩÁ∂≠‰øÆÂè∞Êï∏
+        Range("Q" & nameRng.Row) = W3MRP '‰øÆ‰∫ÜÂ§öÂ∞ëW3M
+        Range("K" & nameRng.Row) = oKT 'ÂÇôÂìÅ
           
         Worksheets("W3M").Activate
         Dim W3M%
-        W3M = ≠p∫‚W3M
+        W3M = Ë®àÁÆóW3M
         Worksheets("This Week").Activate
         Range("O" & nameRng.Row) = Range("O" & nameRng.Row) + W3M
 
  '********************************************************************************************************************************************************
-        '≥B≤z§uÆ…
+        'ËôïÁêÜÂ∑•ÊôÇ
         wbRP.Worksheets("Analysis").Activate
         
         Dim oDennis As Range, oROW%, oColumn%
@@ -262,7 +242,7 @@ Sub meetingA()
         Cells(oROW + 11, oColumn) = myTemp
         
 '*******************************************************************************************************************************************
-        '≥B≤z∫˚≠◊•xº∆
+        'ËôïÁêÜÁ∂≠‰øÆÂè∞Êï∏
         wbRPNum.Worksheets("repair list").Activate
         
         Dim LF1%
@@ -278,13 +258,6 @@ Sub meetingA()
                         Cells(ActiveCell.Row + 1, i + 1) = 0
                         Cells(ActiveCell.Row + 1, i + 2) = W3M
                         Exit For
-'                ElseIf InStr(strLen, "James") > 0 Then
-'                        Cells(1, i).Select
-'                        Selection.End(xlDown).Select
-'
-'                        Cells(ActiveCell.Row + 1, i) = 0
-'                        Cells(ActiveCell.Row + 1, i + 1) = 0
-'                        Cells(ActiveCell.Row + 1, i + 2) = 0
                 End If
         Next
 
@@ -302,14 +275,6 @@ Sub meetingA()
                         Cells(ActiveCell.Row + 2, i) = 0
                         Cells(ActiveCell.Row + 3, i) = 0
                         Cells(ActiveCell.Row + 4, i) = 0
-'                ElseIf InStr(strLen, "James") > 0 Then
-'                        Cells(1, i).Select
-'                        Selection.End(xlDown).Select
-'
-'                        Cells(ActiveCell.Row + 1, i) = 0
-'                        Cells(ActiveCell.Row + 2, i) = 0
-'                        Cells(ActiveCell.Row + 3, i) = 0
-'                        Cells(ActiveCell.Row + 4, i) = 0
                 End If
         Next i
         
@@ -318,18 +283,12 @@ Sub meetingA()
         wbRPNum.Close True
         wbCpleRate.Close True
         
-'        wbMeet.Close False
-'        wbRP.Close False
-'        wbRPNum.Close False
-
-'        wbCpleRate.Activate
-        
         Set wbCpleRate = Nothing
         Set wbRPNum = Nothing
         Set wbRP = Nothing
         Set wbMeet = Nothing
         
-        MsgBox "Meeting §w•˛≥°ßπ¶®", vbInformation
+        MsgBox "Meeting Â∑≤ÂÖ®ÈÉ®ÂÆåÊàê", vbInformation
         
         Application.DisplayAlerts = True
         Application.ScreenUpdating = True
