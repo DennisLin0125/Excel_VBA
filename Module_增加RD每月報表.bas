@@ -1,15 +1,15 @@
-Attribute VB_Name = "Module¼W¥[RD¨C¤ë³øªí"
+Attribute VB_Name = "Moduleå¢åŠ RDæ¯æœˆå ±è¡¨"
 Option Explicit
 
-Sub ¼W¥[¨C¤ë³øªí()
+Sub å¢åŠ æ¯æœˆå ±è¡¨()
         Dim fs As Object, path$, myMonth$, nameStr, nameStrs
         Set fs = CreateObject("Scripting.FileSystemObject")
 
-        'path = "D:\Users\Dlin\Desktop\tt\"
-        path = "P:\RD\Daily  Work Form\2022\"
+        
+        path = ""
         myMonth = Month(Date) + 1
         
-        nameStrs = Array("Dennis", "Cena", "Eric", "Tracy", "¶g¶i«×³ø§i")
+        nameStrs = Array("Dennis", "Cena", "Eric", "Tracy", "é€±é€²åº¦å ±å‘Š")
         With fs
                 .CreateFolder (path & Year(Date) & "." & myMonth)
                 For Each nameStr In nameStrs
@@ -20,7 +20,7 @@ Sub ¼W¥[¨C¤ë³øªí()
         
         Dim savePath$, Save_name$
         For Each nameStr In nameStrs
-                If nameStr <> "¶g¶i«×³ø§i" Then
+                If nameStr <> "é€±é€²åº¦å ±å‘Š" Then
                         savePath = path & Year(Date) & "." & myMonth & "\" & nameStr & "\"
                         Save_name = "R & D Personal From" & Year(Date) & "." & myMonth & "(" & nameStr & ").xlsx"
                         Dim NewBook As Workbook
@@ -41,7 +41,7 @@ Sub GetDateINFO()
         Columns("C").ColumnWidth = 13.38
         Columns("D").ColumnWidth = 132.75
         [C2] = "Date"
-        [D2] = "¨Æ¶µ"
+        [D2] = "äº‹é …"
         
         Range("C2:D33").Select
         With Selection
@@ -49,7 +49,7 @@ Sub GetDateINFO()
                 .VerticalAlignment = xlCenter
                 .Font.Bold = True
                 With .Font
-                        .name = "·s²Ó©úÅé"
+                        .name = "æ–°ç´°æ˜é«”"
                         .Size = 16
                 End With
         End With
@@ -62,17 +62,17 @@ Sub GetDateINFO()
                 .TintAndShade = 0
                 .Weight = xlThin
         End With
-        myDate = DateAdd("m", 1, Date) '¨ú±o¤U­Ó¤ë
-        Firstday = DateSerial(Year(myDate), Month(myDate), 1) '·í¤ë²Ä¤@¤Ñ
-        Endday = DateSerial(Year(myDate), Month(myDate) + 1, 1 - 1) '·í¤ë³Ì«á¤@¤Ñ
+        myDate = DateAdd("m", 1, Date) 'å–å¾—ä¸‹å€‹æœˆ
+        Firstday = DateSerial(Year(myDate), Month(myDate), 1) 'ç•¶æœˆç¬¬ä¸€å¤©
+        Endday = DateSerial(Year(myDate), Month(myDate) + 1, 1 - 1) 'ç•¶æœˆæœ€å¾Œä¸€å¤©
         a = Endday - Firstday
         j = 0
         If a = 29 Then
-                For i = 0 To 29     '¤p¤ë
+                For i = 0 To 29     'å°æœˆ
                         Range("C" & i + 3) = Format(Firstday + j, "yyyy.mm.dd")
                         Range("C" & i + 3).Font.Bold = False
                         If Weekday(Firstday + j) = 1 Or Weekday(Firstday + j) = 7 Then
-                                Range("D" & i + 3) = "°²¤é"
+                                Range("D" & i + 3) = "å‡æ—¥"
                                 Range("D" & i + 3).Font.Bold = False
                                 Range("D" & i + 3).HorizontalAlignment = xlLeft
                                 Range("D" & i + 3).VerticalAlignment = xlCenter
@@ -81,11 +81,11 @@ Sub GetDateINFO()
                         j = j + 1
                 Next
         Else
-                For i = 0 To 30    '¤j¤ë
+                For i = 0 To 30    'å¤§æœˆ
                         Range("C" & i + 3) = Format(Firstday + j, "yyyy.mm.dd")
                         Range("C" & i + 3).Font.Bold = False
                         If Weekday(Firstday + j) = 1 Or Weekday(Firstday + j) = 7 Then
-                                Range("D" & i + 3) = "°²¤é"
+                                Range("D" & i + 3) = "å‡æ—¥"
                                 Range("D" & i + 3).Font.Bold = False
                                 Range("D" & i + 3).HorizontalAlignment = xlLeft
                                 Range("D" & i + 3).VerticalAlignment = xlCenter
