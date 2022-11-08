@@ -1,12 +1,12 @@
-Attribute VB_Name = "Module±H«HExcel"
+Attribute VB_Name = "Moduleå¯„ä¿¡Excel"
 Option Explicit
 Sub SendMailEnvelope()
         
         Dim MailTO$, MailCC
         
-        MailTO = "bella.chang@kaitek.com.tw"
+        MailTO = ""
         
-        MailCC = Array("fortran.wu@kaitek.com.tw", "ivan.feng@kaitek.com.tw")
+        MailCC = Array("", "")
         
         Application.ScreenUpdating = False
         
@@ -20,9 +20,9 @@ Sub SendMailEnvelope()
         
         With ActiveSheet.MailEnvelope
 
-                strText = "Bella" & vbCrLf & vbCrLf & "½ĞÀ°¦£½T»{»PIssue ®Æ¸¹" & vbCrLf & _
-                "§Ú»İ­n­qÁÊ·s®Æ¡A¤w¶ñ¼gParts order" & vbCrLf & _
-                "¶O¥Î³¡ªùÀ°§Ú±¾RD" & vbCrLf & "ÁÂÁÂ"
+                strText = "Bella" & vbCrLf & vbCrLf & "è«‹å¹«å¿™ç¢ºèªèˆ‡Issue æ–™è™Ÿ" & vbCrLf & _
+                "æˆ‘éœ€è¦è¨‚è³¼æ–°æ–™ï¼Œå·²å¡«å¯«Parts order" & vbCrLf & _
+                "è²»ç”¨éƒ¨é–€å¹«æˆ‘æ›RD" & vbCrLf & "è¬è¬"
         
                 .Introduction = strText
                 
@@ -32,16 +32,16 @@ Sub SendMailEnvelope()
                         
                         .CC = Join(MailCC, ";")
                 
-                        .Subject = "½ĞÀ°¦£ÁÊ¶R¹s¥ó"
+                        .Subject = "è«‹å¹«å¿™è³¼è²·é›¶ä»¶"
                         
                         Dim fd As FileDialog
 
                         Set fd = Application.FileDialog(msoFileDialogFilePicker)
                 
                         fd.AllowMultiSelect = True
-                        fd.Title = "½Ğ¿ï¾Ü­nªş¥[ªºÀÉ®×"
+                        fd.Title = "è«‹é¸æ“‡è¦é™„åŠ çš„æª”æ¡ˆ"
                         
-                        MsgBox "½Ğ¿ï¾Ü­nªş¥[ªºÀÉ®×"
+                        MsgBox "è«‹é¸æ“‡è¦é™„åŠ çš„æª”æ¡ˆ"
                         
                         If fd.Show = -1 Then
                                 For Each sPath In fd.SelectedItems
