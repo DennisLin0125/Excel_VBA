@@ -1,5 +1,5 @@
 Attribute VB_Name = "ModuleT8畫波型"
-Sub T8µe¹Ï()
+Sub T8畫波型()
         Application.ScreenUpdating = False
         Dim arr, oROW%
 '*******************************普通畫圖**************************************************************
