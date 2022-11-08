@@ -1,5 +1,5 @@
-Attribute VB_Name = "Module¶K¤W¶i¥X¼t·Ó¤ù"
-Sub ¶K¤W¶i¥X¼t¹Ï¤ù()
+Attribute VB_Name = "Moduleè²¼ä¸Šé€²å‡ºå» ç…§ç‰‡"
+Sub è²¼ä¸Šé€²å‡ºå» åœ–ç‰‡()
         ActiveWindow.Zoom = 75
         
         With Application
@@ -16,17 +16,17 @@ Sub ¶K¤W¶i¥X¼t¹Ï¤ù()
         
         b = b * 0.986
         
-        MsgBox "½Ğ¤@¦¸¿ï§¹ºû­×·Ó¤ù"
+        MsgBox "è«‹ä¸€æ¬¡é¸å®Œç¶­ä¿®ç…§ç‰‡"
         
         Dim fd As FileDialog
         Set fd = Application.FileDialog(msoFileDialogFilePicker)
         
         With fd
                 .AllowMultiSelect = True
-                .InitialFileName = "D:\Users\Dlin\Desktop\·Ó¤ù\" & [F9]
-                '.InitialFileName = "P:\Service\Repair Picture\RF Product\MKS RPS\10441"
+                .InitialFileName = ""
+            
                 .Filters.Add "*.*", "*.*"
-                .Title = "½Ğ¿ï¾Ü·Ó¤ù"
+                .Title = "è«‹é¸æ“‡ç…§ç‰‡"
                 
                 Dim rng As Range
                 Dim sShape As Shape, Row%
@@ -55,9 +55,9 @@ Sub ¶K¤W¶i¥X¼t¹Ï¤ù()
         Set fd = Application.FileDialog(msoFileDialogFilePicker)
         With fd
                 .AllowMultiSelect = True
-                .InitialFileName = "D:\Users\Dlin\Desktop\·Ó¤ù\" & [F9]
-                .Title = "½Ğ¿ï¾Ü·Ó¤ù"
-                '.InitialFileName = "P:\Service\Repair Picture\RF Product\MKS RPS\10441"
+                .InitialFileName = ""
+                .Title = "è«‹é¸æ“‡ç…§ç‰‡"
+        
                 Row = 18
                 
                 If .Show = -1 Then
