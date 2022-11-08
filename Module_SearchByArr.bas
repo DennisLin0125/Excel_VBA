@@ -6,15 +6,15 @@ Sub SearchByArr()
     T1 = FormatDateTime(Time, vbGeneralDate)
     
     Dim rng As Range
-    Set rng = Workbooks("RMA by Dennis.xls").Worksheets("·j´M").Range("A6").CurrentRegion
+    Set rng = Workbooks("RMA by Dennis.xls").Worksheets("æœå°‹").Range("A6").CurrentRegion
     rng.Offset(1).ClearContents
     Set rng = Nothing
     
     Dim snRng As Range
-    Set snRng = Workbooks("RMA by Dennis.xls").Worksheets("·j´M").Range("B1")
+    Set snRng = Workbooks("RMA by Dennis.xls").Worksheets("æœå°‹").Range("B1")
     
     Dim snDennis As Worksheet
-    Set snDennis = Workbooks("RMA by Dennis.xls").Worksheets("·j´M")
+    Set snDennis = Workbooks("RMA by Dennis.xls").Worksheets("æœå°‹")
     
     Const snColm = 11
     
@@ -33,7 +33,7 @@ Sub SearchByArr()
     
         
         Dim fname$
-        fname = "P:\Service\RMA\Main\Kaitek RMA " & j & " main.xls"
+        fname = ""
         
         Dim wb As Workbook
         Set wb = Workbooks.Open(fname)
@@ -55,15 +55,15 @@ Sub SearchByArr()
             If InStr(arr(i, snColm), snRng) * InStr(arr(i, ManchineColm), "Rapid Source") Then
                 
                 snDennis.Range("A" & Row) = arr(i, 1) 'RMA
-                snDennis.Range("B" & Row) = arr(i, 4) '«È¤á
-                snDennis.Range("C" & Row) = arr(i, 7) '¾÷ºØ
+                snDennis.Range("B" & Row) = arr(i, 4) 'å®¢æˆ¶
+                snDennis.Range("C" & Row) = arr(i, 7) 'æ©Ÿç¨®
                 snDennis.Range("D" & Row) = arr(i, 9) 'MN
                 snDennis.Range("E" & Row) = arr(i, 11) 'SN
-                snDennis.Range("F" & Row) = arr(i, 16) '°e¦^¤é´Á
-                snDennis.Range("G" & Row) = arr(i, 20) '¤uµ{®v
+                snDennis.Range("F" & Row) = arr(i, 16) 'é€å›æ—¥æœŸ
+                snDennis.Range("G" & Row) = arr(i, 20) 'å·¥ç¨‹å¸«
                 snDennis.Range("H" & Row) = arr(i, 17) 'W3M
                 snDennis.Range("I" & Row) = arr(i, 21) 'NPO
-                snDennis.Range("J" & Row) = arr(i, 25) '¬G»Ù´y­z
+                snDennis.Range("J" & Row) = arr(i, 25) 'æ•…éšœæè¿°
                 Row = Row + 1
                 
             End If
@@ -84,7 +84,7 @@ Sub SearchByArr()
 
     t2 = FormatDateTime(Time, vbGeneralDate)
     
-    MsgBox "³B²z§¹¦¨" & Chr(10) & Chr(10) & "¬d¸ß®É¶¡" & DateDiff("s", T1, t2) & "¬í¡C"
+    MsgBox "è™•ç†å®Œæˆ" & Chr(10) & Chr(10) & "æŸ¥è©¢æ™‚é–“" & DateDiff("s", T1, t2) & "ç§’ã€‚"
     
 End Sub
 
