@@ -1,23 +1,23 @@
-Attribute VB_Name = "Module½Æ»sµÄÅé·Ó¤ù"
-Sub ½Æ»sµÄÅé·Ó¤ù()
-    SN = InputBox("½Ğ¿é¤JSN")
-    RMA = InputBox("½Ğ¿é¤JRMA")
+Attribute VB_Name = "Moduleè¤‡è£½è…”é«”ç…§ç‰‡"
+Sub è¤‡è£½è…”é«”ç…§ç‰‡()
+    SN = InputBox("è«‹è¼¸å…¥SN")
+    RMA = InputBox("è«‹è¼¸å…¥RMA")
     
     If SN = "" Then Exit Sub
     If RMA = "" Then Exit Sub
     
     Set fs = CreateObject("Scripting.FileSystemObject")
     
-    If Not fs.FolderExists("P:\Service\Repair Picture\RF Product\©î¸Ë¤H­û¼È©ñSource\" & RMA) Then
-        MsgBox "RMA : " & RMA & " ¨S¦³©îµÄÅé"
+    If Not fs.FolderExists("") Then
+        MsgBox "RMA : " & RMA & " æ²’æœ‰æ‹†è…”é«”"
         Exit Sub
     End If
     
-    Source = "P:\Service\Repair Picture\RF Product\©î¸Ë¤H­û¼È©ñSource\" & RMA
-    path = "D:\Users\Dlin\Desktop\·Ó¤ù\" & SN
+    Source = "" & RMA
+    path = "D:\Users\Dlin\Desktop\ç…§ç‰‡\" & SN
             
     fs.CopyFolder Source, path
     
-    MsgBox "SN : " & SN & " ·Ó¤ù½Æ»s§¹¦¨"
+    MsgBox "SN : " & SN & " ç…§ç‰‡è¤‡è£½å®Œæˆ"
     
 End Sub
