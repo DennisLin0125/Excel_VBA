@@ -1,5 +1,5 @@
-Attribute VB_Name = "Module¨Ì¼t§O·j´M"
-Sub ¼t§O()
+Attribute VB_Name = "Moduleä¾å» åˆ¥æœå°‹"
+Sub å» åˆ¥()
     Application.DisplayAlerts = False
     Application.ScreenUpdating = False
     
@@ -12,7 +12,7 @@ Sub ¼t§O()
     Selection.ClearContents
     Range("A1").Select
     
-    Set Dennis = Workbooks("RMA by Dennis.xls").Worksheets("·j´M")
+    Set Dennis = Workbooks("RMA by Dennis.xls").Worksheets("æœå°‹")
     
     Row = 7
     
@@ -23,9 +23,9 @@ Sub ¼t§O()
     
     For i = RmaStartYear To RmaStopYear Step -1
     
-        Workbooks.Open Filename:="P:\Service\RMA\Main\Kaitek RMA " & i & " main.xls"
+        Workbooks.Open Filename:=""
         
-        Set main = Workbooks("Kaitek RMA " & i & " main.xls").Worksheets("Master")
+        Set main = Workbooks("").Worksheets("Master")
         
         LF = Range("A1").End(xlDown).Row
         
@@ -34,26 +34,26 @@ Sub ¼t§O()
             
             main.Range("D" & LF).Select
             
-            '¤å¦r
+            'æ–‡å­—
             If main.Range("D" & LF).Value = RmaCus And main.Range("G" & LF).Value = "Rapid Source" Then
                 
                     Dennis.Range("B" & Row) = main.Range("A" & LF)  'RMA
                     Dennis.Range("C" & Row) = main.Range("C" & LF)  'call date
-                    Dennis.Range("D" & Row) = main.Range("D" & LF)  '«È¤á
-                    Dennis.Range("E" & Row) = main.Range("G" & LF)  '¾÷ºØ
+                    Dennis.Range("D" & Row) = main.Range("D" & LF)  'å®¢æˆ¶
+                    Dennis.Range("E" & Row) = main.Range("G" & LF)  'æ©Ÿç¨®
                     Dennis.Range("F" & Row) = main.Range("I" & LF)  'MN
                     Dennis.Range("G" & Row) = main.Range("K" & LF)  'SN
                     Dennis.Range("H" & Row) = main.Range("P" & LF)  'Ship date
                     Dennis.Range("I" & Row) = main.Range("T" & LF)  'Engineer
                     Dennis.Range("J" & Row) = main.Range("Q" & LF)  'Warranty Type
                     Dennis.Range("K" & Row) = main.Range("U" & LF)  'NPO
-                    Dennis.Range("L" & Row) = main.Range("Y" & LF)  '¬G»Ù¤º®e
+                    Dennis.Range("L" & Row) = main.Range("Y" & LF)  'æ•…éšœå…§å®¹
                 Row = Row + 1
                 
             End If
             LF = LF - 1
         Loop
-        Workbooks("Kaitek RMA " & i & " main.xls").Close False
+        Workbooks("").Close False
     Next i
     
     Row = Row - 1
@@ -61,14 +61,14 @@ Sub ¼t§O()
         If Dennis.Range("H" & i + 1) = "" Then
                 Dennis.Range("A" & i) = ""
         Else
-                Dennis.Range("A" & i) = (Dennis.Range("C" & i) - Dennis.Range("H" & i + 1)) & " ¤Ñ"
+                Dennis.Range("A" & i) = (Dennis.Range("C" & i) - Dennis.Range("H" & i + 1)) & " å¤©"
         End If
     Next
     
     Application.DisplayAlerts = True
     Application.ScreenUpdating = True
     Dennis.Activate
-    MsgBox ("³B²z§¹¦¨")
+    MsgBox ("è™•ç†å®Œæˆ")
 End Sub
 
 
