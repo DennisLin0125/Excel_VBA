@@ -1,6 +1,6 @@
-Attribute VB_Name = "Module_¦r¨å½m²ß"
+Attribute VB_Name = "Module_å­—å…¸"
 Sub test()
-        Application.ScreenUpdating = False 'Ãö³¬§ó·sµe­±
+        Application.ScreenUpdating = False 
         Application.DisplayAlerts = False
         Application.Calculation = xlCalculationManual
         Application.EnableEvents = False
@@ -9,7 +9,7 @@ Sub test()
         Set d = CreateObject("scripting.dictionary")
         
         Dim wb As Workbook
-        Set wb = Workbooks.Open("P:\Service\§Þ³N°Q½×±M°Ï\Engineer\1. Jack\A team\RMA_¯Ó¥Î§÷®Æ.xlsx")
+        Set wb = Workbooks.Open("")
         
         With wb
                 arr = [A1].CurrentRegion
@@ -27,7 +27,7 @@ Sub test()
                 If d.exists(brr(i, 1)) Then
                         brr(i, 2) = d(brr(i, 1))
                 Else
-                        brr(i, 2) = "¬dµL¦¹¸ê®Æ"
+                        brr(i, 2) = "æŸ¥ç„¡æ­¤è³‡æ–™"
                 End If
         Next
         
