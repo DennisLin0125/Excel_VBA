@@ -1,5 +1,5 @@
-Attribute VB_Name = "Module¶K¤W·lÃa·Ó¤ù"
-Sub ¶K¤W·lÃa·Ó¤ù()
+Attribute VB_Name = "Moduleè²¼ä¸Šæå£ç…§ç‰‡"
+Sub è²¼ä¸Šæå£ç…§ç‰‡()
         ActiveWindow.Zoom = 75
         
         With Application
@@ -7,7 +7,7 @@ Sub ¶K¤W·lÃa·Ó¤ù()
                 .ScreenUpdating = False
         End With
     
-        'MsgBox "½Ğ¤@¦¸¿ï§¹ºû­×·Ó¤ù"
+        'MsgBox "è«‹ä¸€æ¬¡é¸å®Œç¶­ä¿®ç…§ç‰‡"
         
         a = Range("A1:D1").Width
         
@@ -21,8 +21,8 @@ Sub ¶K¤W·lÃa·Ó¤ù()
         
         With fd
                 .AllowMultiSelect = True
-                .InitialFileName = "D:\Users\Dlin\Desktop\·Ó¤ù\" & [F9]
-                .Title = "½Ğ¿ï¾Ü·Ó¤ù"
+                .InitialFileName = ""
+                .Title = "è«‹é¸æ“‡ç…§ç‰‡"
                 
                 Row = 18
                 
@@ -54,9 +54,9 @@ Sub ¶K¤W·lÃa·Ó¤ù()
         
         With fd
                 .AllowMultiSelect = True
-                .InitialFileName = "D:\Users\Dlin\Desktop\·Ó¤ù\" & [F9]
-                .Title = "½Ğ¿ï¾Ü·Ó¤ù"
-                'MsgBox "½Ğ¤@¦¸¿ï§¹  ºû­×«á·Ó¤ù"
+                .InitialFileName = ""
+                .Title = "è«‹é¸æ“‡ç…§ç‰‡"
+                'MsgBox "è«‹ä¸€æ¬¡é¸å®Œ  ç¶­ä¿®å¾Œç…§ç‰‡"
                 Row = 18
                 
                 If .Show Then
