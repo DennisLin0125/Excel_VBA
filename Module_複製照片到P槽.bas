@@ -1,58 +1,50 @@
-Attribute VB_Name = "Module1½Æ»s·Ó¤ù¨ìP¼Ñ"
-Sub «Ø¥ß·Ó¤ù¦ÜP¼Ñ()
+Attribute VB_Name = "Module1è¤‡è£½ç…§ç‰‡åˆ°Pæ§½"
+Sub å»ºç«‹ç…§ç‰‡è‡³Pæ§½()
 
-        SN = InputBox("½Ğ¿é¤JSN")
+        SN = InputBox("è«‹è¼¸å…¥SN")
         If SN = "" Then Exit Sub
         
         Dim myPath$
-        myPath = "D:\Users\Dlin\Desktop\·Ó¤ù\" & SN
+        myPath = ""
         If Dir(myPath & "\") = "" Then
-                MsgBox "·Ó¤ù¸ê®Æ§¨¸Ì¡A¨S¦³SN : " & SN & " ªº·Ó¤ù¡I", vbCritical
+                MsgBox "ç…§ç‰‡è³‡æ–™å¤¾è£¡ï¼Œæ²’æœ‰SN : " & SN & " çš„ç…§ç‰‡ï¼", vbCritical
                 Exit Sub
         End If
         
-        RMA = InputBox("½Ğ¿é¤JRMA")
+        RMA = InputBox("è«‹è¼¸å…¥RMA")
         If RMA = "" Then Exit Sub
         
         Set fs = CreateObject("Scripting.FileSystemObject")
         
-        If fs.FolderExists("P:\Service\§Ş³N°Q½×±M°Ï\Engineer\Dennis\MKS\" & SN) Then
-                fs.DeleteFolder "P:\Service\§Ş³N°Q½×±M°Ï\Engineer\Dennis\MKS\" & SN
+        If fs.FolderExists("") Then
+                fs.DeleteFolder ""
         End If
         
         With fs
-                .CreateFolder ("P:\Service\§Ş³N°Q½×±M°Ï\Engineer\Dennis\MKS\" & SN)
-                .CreateFolder ("P:\Service\§Ş³N°Q½×±M°Ï\Engineer\Dennis\MKS\" & SN & "\" & RMA)
-                .CreateFolder ("P:\Service\§Ş³N°Q½×±M°Ï\Engineer\Dennis\MKS\" & SN & "\" & RMA & "\LOG\")
-                .CreateFolder ("P:\Service\§Ş³N°Q½×±M°Ï\Engineer\Dennis\MKS\" & SN & "\" & RMA & "\¶i¥X¼t·Ó¤ù")
-                .CreateFolder ("P:\Service\§Ş³N°Q½×±M°Ï\Engineer\Dennis\MKS\" & SN & "\" & RMA & "\¬G»Ù¹Ï¤ù")
-                .CreateFolder ("P:\Service\§Ş³N°Q½×±M°Ï\Engineer\Dennis\MKS\" & SN & "\" & RMA & "\¬G»Ù¹Ï¤ù\ºû­×«e")
-                .CreateFolder ("P:\Service\§Ş³N°Q½×±M°Ï\Engineer\Dennis\MKS\" & SN & "\" & RMA & "\¬G»Ù¹Ï¤ù\ºû­×«á")
-                .CreateFolder ("P:\Service\§Ş³N°Q½×±M°Ï\Engineer\Dennis\MKS\" & SN & "\" & RMA & "\¶i¥X¼t·Ó¤ù\ºû­×«e")
-                .CreateFolder ("P:\Service\§Ş³N°Q½×±M°Ï\Engineer\Dennis\MKS\" & SN & "\" & RMA & "\¶i¥X¼t·Ó¤ù\ºû­×«á")
+                .CreateFolder ("")
         End With
         
         Dim RpBeforPath$, RpAfterPath$, MachAfterPath$, MachBeforPath$, SourcePath$, LogPath$
         
-        RpBeforPath = "P:\Service\§Ş³N°Q½×±M°Ï\Engineer\Dennis\MKS\" & SN & "\" & RMA & "\¬G»Ù¹Ï¤ù\ºû­×«e\"
-        RpAfterPath = "P:\Service\§Ş³N°Q½×±M°Ï\Engineer\Dennis\MKS\" & SN & "\" & RMA & "\¬G»Ù¹Ï¤ù\ºû­×«á\"
+        RpBeforPath = ""
+        RpAfterPath = ""
         
-        MachAfterPath = "P:\Service\§Ş³N°Q½×±M°Ï\Engineer\Dennis\MKS\" & SN & "\" & RMA & "\¶i¥X¼t·Ó¤ù\ºû­×«á\"
-        MachBeforPath = "P:\Service\§Ş³N°Q½×±M°Ï\Engineer\Dennis\MKS\" & SN & "\" & RMA & "\¶i¥X¼t·Ó¤ù\ºû­×«e\"
+        MachAfterPath = ""
+        MachBeforPath = ""
         
-        SourcePath = "P:\Service\§Ş³N°Q½×±M°Ï\Engineer\Dennis\MKS\" & SN & "\" & RMA
-        LogPath = "P:\Service\§Ş³N°Q½×±M°Ï\Engineer\Dennis\MKS\" & SN & "\" & RMA & "\LOG\"
+        SourcePath = ""
+        LogPath = ""
         
-        'ºû­×«e¥~Æ[·Ó¤ù
+        'ç¶­ä¿®å‰å¤–è§€ç…§ç‰‡
         Dim fdMachBefor As FileDialog
         Set fdMachBefor = Application.FileDialog(msoFileDialogFilePicker)
         
         With fdMachBefor
                 .AllowMultiSelect = True
                 .InitialFileName = myPath
-                .ButtonName = "´N¬O§A¤F!!"
-                .Title = "½Ğ¿ï¾Ü ¶i¥X¼t·Ó¤ùªº(ºû­×«e)·Ó¤ù"
-                MsgBox "±µ¤U¨Ó¡A±N§â·Ó¤ù©M¸ê®Æ°µ¤ÀÃş" & Chr(10) & Chr(10) & "½Ğ¿ï¾Ü ¶i¥X¼t·Ó¤ùªº (ºû­×«e) ·Ó¤ù"
+                .ButtonName = "å°±æ˜¯ä½ äº†!!"
+                .Title = "è«‹é¸æ“‡ é€²å‡ºå» ç…§ç‰‡çš„(ç¶­ä¿®å‰)ç…§ç‰‡"
+                MsgBox "æ¥ä¸‹ä¾†ï¼Œå°‡æŠŠç…§ç‰‡å’Œè³‡æ–™åšåˆ†é¡" & Chr(10) & Chr(10) & "è«‹é¸æ“‡ é€²å‡ºå» ç…§ç‰‡çš„ (ç¶­ä¿®å‰) ç…§ç‰‡"
         
                 If .Show Then
                         For Each sPath In .SelectedItems
@@ -61,15 +53,15 @@ Sub «Ø¥ß·Ó¤ù¦ÜP¼Ñ()
                 End If
         End With
         
-        'ºû­×«á¥~Æ[·Ó¤ù
+        'ç¶­ä¿®å¾Œå¤–è§€ç…§ç‰‡
         Dim fdMachAfter As FileDialog
         Set fdMachAfter = Application.FileDialog(msoFileDialogFilePicker)
         
         With fdMachAfter
                 .AllowMultiSelect = True
-                .Title = "½Ğ¿ï¾Ü ¶i¥X¼t·Ó¤ùªº (ºû­×«á) ·Ó¤ù"
-                .ButtonName = "´N¬O§A¤F!!"
-                MsgBox "½Ğ¿ï¾Ü ¶i¥X¼t·Ó¤ùªº(ºû­×«á)·Ó¤ù"
+                .Title = "è«‹é¸æ“‡ é€²å‡ºå» ç…§ç‰‡çš„ (ç¶­ä¿®å¾Œ) ç…§ç‰‡"
+                .ButtonName = "å°±æ˜¯ä½ äº†!!"
+                MsgBox "è«‹é¸æ“‡ é€²å‡ºå» ç…§ç‰‡çš„(ç¶­ä¿®å¾Œ)ç…§ç‰‡"
                
                 If .Show Then
                         For Each sPath In .SelectedItems
@@ -78,15 +70,15 @@ Sub «Ø¥ß·Ó¤ù¦ÜP¼Ñ()
                 End If
         End With
         
-        'ºû­×«e¬G»Ù·Ó¤ù
+        'ç¶­ä¿®å‰æ•…éšœç…§ç‰‡
         Dim fdRpBefor As FileDialog
         Set fdRpBefor = Application.FileDialog(msoFileDialogFilePicker)
         
         With fdRpBefor
                 .AllowMultiSelect = True
-                .Title = "½Ğ¿ï¾Ü ¬G»Ù·Ó¤ùªº (ºû­×«e) ·Ó¤ù"
-                .ButtonName = "´N¬O§A¤F!!"
-                MsgBox "½Ğ¿ï¾Ü ¬G»Ù·Ó¤ùªº(ºû­×«e)·Ó¤ù"
+                .Title = "è«‹é¸æ“‡ æ•…éšœç…§ç‰‡çš„ (ç¶­ä¿®å‰) ç…§ç‰‡"
+                .ButtonName = "å°±æ˜¯ä½ äº†!!"
+                MsgBox "è«‹é¸æ“‡ æ•…éšœç…§ç‰‡çš„(ç¶­ä¿®å‰)ç…§ç‰‡"
                
                 If .Show Then
                         For Each sPath In .SelectedItems
@@ -95,15 +87,15 @@ Sub «Ø¥ß·Ó¤ù¦ÜP¼Ñ()
                 End If
         End With
         
-        'ºû­×«e¬G»Ù·Ó¤ù
+        'ç¶­ä¿®å‰æ•…éšœç…§ç‰‡
         Dim fdRpAfter As FileDialog
         Set fdRpAfter = Application.FileDialog(msoFileDialogFilePicker)
         
         With fdRpAfter
                 .AllowMultiSelect = True
-                .Title = "½Ğ¿ï¾Ü ¬G»Ù·Ó¤ùªº (ºû­×«á) ·Ó¤ù"
-                .ButtonName = "´N¬O§A¤F!!"
-                MsgBox "½Ğ¿ï¾Ü ¬G»Ù·Ó¤ùªº(ºû­×«á)·Ó¤ù"
+                .Title = "è«‹é¸æ“‡ æ•…éšœç…§ç‰‡çš„ (ç¶­ä¿®å¾Œ) ç…§ç‰‡"
+                .ButtonName = "å°±æ˜¯ä½ äº†!!"
+                MsgBox "è«‹é¸æ“‡ æ•…éšœç…§ç‰‡çš„(ç¶­ä¿®å¾Œ)ç…§ç‰‡"
                 
                 If .Show Then
                         For Each sPath In .SelectedItems
@@ -112,15 +104,15 @@ Sub «Ø¥ß·Ó¤ù¦ÜP¼Ñ()
                 End If
         End With
         
-        'LOG ÂI¤õ¹qÀ£
+        'LOG é»ç«é›»å£“
         Dim fdLog As FileDialog
         Set fdLog = Application.FileDialog(msoFileDialogFilePicker)
         
         With fdLog
                 .AllowMultiSelect = True
-                .Title = "½Ğ¿ï¾ÜLog¸ê®Æ"
-                .ButtonName = "´N¬O§A¤F!!"
-                MsgBox "½Ğ¿ï¾Ü LOG ¸ê®Æ"
+                .Title = "è«‹é¸æ“‡Logè³‡æ–™"
+                .ButtonName = "å°±æ˜¯ä½ äº†!!"
+                MsgBox "è«‹é¸æ“‡ LOG è³‡æ–™"
                 
                 If .Show Then
                         For Each sPath In .SelectedItems
@@ -129,15 +121,15 @@ Sub «Ø¥ß·Ó¤ù¦ÜP¼Ñ()
                 End If
         End With
         
-        'µÄÅé²Õ¸Ë·Ó¤ù
+        'è…”é«”çµ„è£ç…§ç‰‡
 '        Dim fdSource As FileDialog
 '        Set fdSource = Application.FileDialog(msoFileDialogFolderPicker)
 '
 '        With fdSource
-'                .InitialFileName = "P:\Service\Repair Picture\RF Product\©î¸Ë¤H­û¼È©ñSource"
-'                .Title = "½Ğ¿ï¾Ü²Õ¸Ë¤H­û·Ó¤ù¥HRMA©R¦Wªº¸ê®Æ§¨"
-'                .ButtonName = "´N¬O§A¤F!!"
-'                MsgBox "½Ğ¿ï¾Ü ²Õ¸Ë¤H­û·Ó¤ù¥H RMA ©R¦Wªº¸ê®Æ§¨" & Chr(10) & Chr(10) & "¦pªGµÄÅé¥¼©î½Ğ«ö ¨ú®ø"
+'                .InitialFileName = ""
+'                .Title = "è«‹é¸æ“‡çµ„è£äººå“¡ç…§ç‰‡ä»¥RMAå‘½åçš„è³‡æ–™å¤¾"
+'                .ButtonName = "å°±æ˜¯ä½ äº†!!"
+'                MsgBox "è«‹é¸æ“‡ çµ„è£äººå“¡ç…§ç‰‡ä»¥ RMA å‘½åçš„è³‡æ–™å¤¾" & Chr(10) & Chr(10) & "å¦‚æœè…”é«”æœªæ‹†è«‹æŒ‰ å–æ¶ˆ"
 '
 '                If .Show Then
 '                        fs.CopyFolder .SelectedItems(1), SourcePath
@@ -153,28 +145,28 @@ Sub «Ø¥ß·Ó¤ù¦ÜP¼Ñ()
         Set fdMachBefor = Nothing
         
         
-        '²¾°Ê
-        Source = "P:\Service\§Ş³N°Q½×±M°Ï\Engineer\Dennis\MKS\" & SN
+        'ç§»å‹•
+        Source = "P:\Service\æŠ€è¡“è¨è«–å°ˆå€\Engineer\Dennis\MKS\" & SN
         
         Dim fd2 As FileDialog, a%
         Set fd2 = Application.FileDialog(msoFileDialogFolderPicker)
         
         With fd2
-                .Title = "½Ğ¿ï¾Ü­n²¾°Ê¨ì­ş­Ó¸ê®Æ§¨"
-                .InitialFileName = "P:\Service\Product\Repair Picture"
-                .ButtonName = "´N¬O§A¤F!!"
-                MsgBox "½Ğ¿ï¾Ü­n²¾°Ê¨ì­ş­Ó¸ê®Æ§¨"
+                .Title = "è«‹é¸æ“‡è¦ç§»å‹•åˆ°å“ªå€‹è³‡æ–™å¤¾"
+                .InitialFileName = ""
+                .ButtonName = "å°±æ˜¯ä½ äº†!!"
+                MsgBox "è«‹é¸æ“‡è¦ç§»å‹•åˆ°å“ªå€‹è³‡æ–™å¤¾"
                     
                 If .Show Then
                         tpath = .SelectedItems(1) & "\" & SN
                         Set fs = CreateObject("scripting.FileSystemObject")
                         fs.CopyFolder Source, tpath
                         fs.DeleteFolder Source
-                        a = MsgBox("¬O§_­n§R°£ " & SN & " ¸ê®Æ§¨ ?", vbYesNo)
+                        a = MsgBox("æ˜¯å¦è¦åˆªé™¤ " & SN & " è³‡æ–™å¤¾ ?", vbYesNo)
                         If a = vbYes Then
                                 fs.DeleteFolder myPath
                         End If
-                        MsgBox "³B²z§¹¦¨"
+                        MsgBox "è™•ç†å®Œæˆ"
                 End If
         End With
         
