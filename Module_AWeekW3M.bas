@@ -14,7 +14,7 @@ Sub WeekW3M()
         Application.DisplayAlerts = False
     
         Dim rng5 As Range
-        Set rng5 = Workbooks("«İ­×¤ÀªR.xlsm").Worksheets("¥»©P«O©T").Cells(1, 1).CurrentRegion
+        Set rng5 = Workbooks("å¾…ä¿®åˆ†æ.xlsm").Worksheets("æœ¬å‘¨ä¿å›º").Cells(1, 1).CurrentRegion
         rng5.Offset(1).ClearContents
     
         
@@ -22,10 +22,10 @@ Sub WeekW3M()
         
         myDate = Format(Date, "yyyymmdd")
         
-        Year = Mid(myDate, 1, 4) '¨ú¦~¤À
+        Year = Mid(myDate, 1, 4) 'å–å¹´åˆ†
         
-        fpathThisYear = "P:\Service\RMA\Main\Kaitek RMA " & Year & " main.xls"
-        fpathBeforeYear = "P:\Service\RMA\Main\Kaitek RMA " & Year - 1 & " main.xls"
+        fpathThisYear = ""
+        fpathBeforeYear = ""
         Set wb = Workbooks.Open(fpathThisYear, UpdateLinks:=0)
     
         Dim arr
@@ -60,10 +60,10 @@ Sub WeekW3M()
                 
                     If InStr(Cells(i, "C"), arr(j)) * InStr(Cells(i, "Q"), "3") Then
                                 Dim tempSn$, tempCust$
-                                tempSn = Cells(i, "K")    '  ¼È¦sSN
-                                tempCust = Cells(i, "D") '  ¼È¦s«È¤á¦WºÙ
+                                tempSn = Cells(i, "K")    '  æš«å­˜SN
+                                tempCust = Cells(i, "D") '  æš«å­˜å®¢æˆ¶åç¨±
                                 Dim rngSn As Range
-                                Set rngSn = Range("K1:K" & i - 1).Find(What:=tempSn, After:=Cells(i - 1, "K"), LookAt:=xlWhole, SearchDirection:=xlPrevious) '·j´M¬O§_¦³«O©T
+                                Set rngSn = Range("K1:K" & i - 1).Find(What:=tempSn, After:=Cells(i - 1, "K"), LookAt:=xlWhole, SearchDirection:=xlPrevious) 'æœå°‹æ˜¯å¦æœ‰ä¿å›º
                                 
                                 If Not rngSn Is Nothing Then
                                         Dim myRow%, engineer$, RMA$, ShipDate As Date
@@ -72,13 +72,13 @@ Sub WeekW3M()
                                                 engineer = Cells(myRow, "T")
                                                 RMA = Cells(myRow, "A")
                                                 ShipDate = Cells(myRow, "P")
-                                        ElseIf Left(Range("D" & myRow), 3) = "UMC" And Left(tempCust, 3) = "UMC" Then  '§PÂ_¬O§_¬°UMC
+                                        ElseIf Left(Range("D" & myRow), 3) = "UMC" And Left(tempCust, 3) = "UMC" Then  'åˆ¤æ–·æ˜¯å¦ç‚ºUMC
                                                 engineer = Cells(myRow, "T")
                                                 RMA = Cells(myRow, "A")
                                                 ShipDate = Cells(myRow, "P")
                                         Else
                                                 Set firstRng = rngSn
-                                                Do                                     '§ä¤U¤@­Ó«O©T
+                                                Do                                     'æ‰¾ä¸‹ä¸€å€‹ä¿å›º
                                                         Set rngSn = Range("K1:K" & i - 1).FindPrevious(rngSn)
                                                         myRow = rngSn.Row
                                                         If Range("D" & myRow) = tempCust Then
@@ -86,7 +86,7 @@ Sub WeekW3M()
                                                                 RMA = Cells(myRow, "A")
                                                                 ShipDate = Cells(myRow, "P")
                                                                 Exit Do
-                                                        ElseIf Left(Range("D" & myRow), 3) = "UMC" And Left(tempCust, 3) = "UMC" Then  '§PÂ_¬O§_¬°UMC
+                                                        ElseIf Left(Range("D" & myRow), 3) = "UMC" And Left(tempCust, 3) = "UMC" Then  'åˆ¤æ–·æ˜¯å¦ç‚ºUMC
                                                                 engineer = Cells(myRow, "T")
                                                                 RMA = Cells(myRow, "A")
                                                                 ShipDate = Cells(myRow, "P")
@@ -108,13 +108,13 @@ Sub WeekW3M()
                                                         engineer = Cells(myRow, "T")
                                                         RMA = Cells(myRow, "A")
                                                         ShipDate = Cells(myRow, "P")
-                                                ElseIf Left(Range("D" & myRow), 3) = "UMC" And Left(tempCust, 3) = "UMC" Then  '§PÂ_¬O§_¬°UMC
+                                                ElseIf Left(Range("D" & myRow), 3) = "UMC" And Left(tempCust, 3) = "UMC" Then  'åˆ¤æ–·æ˜¯å¦ç‚ºUMC
                                                         engineer = Cells(myRow, "T")
                                                         RMA = Cells(myRow, "A")
                                                         ShipDate = Cells(myRow, "P")
                                                 Else
                                                         Set firstRng = rng2
-                                                        Do                                     '§ä¤U¤@­Ó«O©T
+                                                        Do                                     'æ‰¾ä¸‹ä¸€å€‹ä¿å›º
                                                                 Set rng2 = Range("K1:K" & LF).FindPrevious(rng2)
                                                                 myRow = rng2.Row
                                                                 If Range("D" & myRow) = tempCust Then
@@ -122,7 +122,7 @@ Sub WeekW3M()
                                                                         RMA = Cells(myRow, "A")
                                                                         ShipDate = Cells(myRow, "P")
                                                                         Exit Do
-                                                                 ElseIf Left(Range("D" & myRow), 3) = "UMC" And Left(tempCust, 3) = "UMC" Then  '§PÂ_¬O§_¬°UMC
+                                                                 ElseIf Left(Range("D" & myRow), 3) = "UMC" And Left(tempCust, 3) = "UMC" Then  'åˆ¤æ–·æ˜¯å¦ç‚ºUMC
                                                                         engineer = Cells(myRow, "T")
                                                                         RMA = Cells(myRow, "A")
                                                                         ShipDate = Cells(myRow, "P")
@@ -167,7 +167,7 @@ Sub WeekW3M()
         Next j
         wb.Close False
         Set wb = Nothing
-        With Workbooks("«İ­×¤ÀªR.xlsm").Worksheets("¥»©P«O©T")
+        With Workbooks("å¾…ä¿®åˆ†æ.xlsm").Worksheets("æœ¬å‘¨ä¿å›º")
                 .[A2].Resize(TempMyRow, 11) = MyArr
                 .Activate
         End With
@@ -175,7 +175,7 @@ Sub WeekW3M()
         Application.ScreenUpdating = True
         Application.DisplayAlerts = True
         
-        MsgBox "³B²z§¹¦¨" & Chr(10) & Chr(10) & _
-               "³oÂ§«ô¦¬¨ì " & Total & " ¥x¾÷¾¹" & Chr(10) & Chr(10) & _
-               "¦@¦³ " & W3M & " ¥x«O©T"
+        MsgBox "è™•ç†å®Œæˆ" & Chr(10) & Chr(10) & _
+               "é€™ç¦®æ‹œæ”¶åˆ° " & Total & " å°æ©Ÿå™¨" & Chr(10) & Chr(10) & _
+               "å…±æœ‰ " & W3M & " å°ä¿å›º"
 End Sub
